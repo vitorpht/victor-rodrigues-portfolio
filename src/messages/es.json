@@ -1,0 +1,571 @@
+{
+  "meta": {
+    "title": "Victor Rodrigues | Desarrollador Full-Stack",
+    "description": "Portafolio profesional de Victor Rodrigues — Desarrollador Full-Stack especializado en Next.js, TypeScript, PostgreSQL, arquitectura SaaS y seguridad.",
+    "keywords": "Victor Rodrigues, Desarrollador Full-Stack, Next.js, TypeScript, PostgreSQL, Supabase, SaaS, Portafolio"
+  },
+  "seo": {
+    "home": {
+      "title": "Victor Rodrigues | Desarrollador Full-Stack",
+      "description": "Portafolio profesional de Victor Rodrigues — Desarrollador Full-Stack especializado en Next.js, TypeScript, PostgreSQL y plataformas SaaS."
+    },
+    "about": {
+      "title": "Sobre Mí | Victor Rodrigues",
+      "description": "Conoce a Victor Rodrigues — trayectoria, formación, tecnologías principales y objetivos profesionales en desarrollo Full-Stack."
+    },
+    "highlights": {
+      "title": "Destacados Técnicos | Victor Rodrigues",
+      "description": "Competencias técnicas demostradas en proyectos reales: SaaS, multi-tenancy, PostgreSQL, Supabase, Stripe y seguridad."
+    },
+    "technologies": {
+      "title": "Tecnologías | Victor Rodrigues",
+      "description": "Stack tecnológico de Victor Rodrigues — frontend, backend, bases de datos, seguridad e infraestructura cloud."
+    },
+    "certifications": {
+      "title": "Certificaciones | Victor Rodrigues",
+      "description": "Formación técnica y certificaciones de Victor Rodrigues en desarrollo Full-Stack, Java e ingeniería informática."
+    },
+    "projects": {
+      "title": "Proyectos | Victor Rodrigues",
+      "description": "Proyectos de Victor Rodrigues — FlowJersey SaaS, proyectos Java y desarrollo de software moderno."
+    },
+    "flowjersey": {
+      "title": "FlowJersey | Victor Rodrigues",
+      "description": "FlowJersey — plataforma SaaS multi-tenant para e-commerce deportivo. Arquitectura, tecnologías y galería."
+    },
+    "journey": {
+      "title": "Trayectoria | Victor Rodrigues",
+      "description": "Trayectoria profesional y académica de Victor Rodrigues — formación, proyectos y objetivos futuros."
+    },
+    "contact": {
+      "title": "Contacto | Victor Rodrigues",
+      "description": "Contacta con Victor Rodrigues para colaboraciones, proyectos web y plataformas SaaS."
+    },
+    "cv": {
+      "title": "Victor Rodrigues | Currículum",
+      "description": "Currículum de Victor Rodrigues — Desarrollador Full-Stack. Competencias, proyectos, formación y certificaciones."
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "journey": "Trayectoria",
+    "highlights": "Destacados",
+    "technologies": "Tecnologías",
+    "certifications": "Certificaciones",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "skipToContent": "Saltar al contenido"
+  },
+  "hero": {
+    "badge": "Disponible para nuevos proyectos",
+    "greeting": "Hola, soy",
+    "name": "Victor Rodrigues",
+    "role": "Desarrollador Full-Stack | Ingeniería Informática",
+    "description": "Desarrollo aplicaciones web modernas y plataformas SaaS utilizando Next.js, TypeScript y PostgreSQL.",
+    "currentProject": "Actualmente estoy construyendo FlowJersey, una plataforma SaaS multi-tenant enfocada en e-commerce deportivo, con un fuerte énfasis en seguridad, escalabilidad y rendimiento.",
+    "viewProjects": "Ver Proyectos",
+    "contact": "Contactar",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "cv": "Descargar CV",
+    "cvDownload": "Descargar CV",
+    "avatarAlt": "Victor Rodrigues — Desarrollador Full-Stack"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Profesional dedicado al desarrollo de software moderno y escalable.",
+    "whoAmI": {
+      "title": "Quién soy",
+      "description": "Soy Victor Rodrigues, Desarrollador Full-Stack enfocado en la creación de aplicaciones web modernas, seguras y escalables. Busco aplicar buenas prácticas de desarrollo, arquitectura de software y experiencia de usuario en cada proyecto que desarrollo, transformando el conocimiento técnico en soluciones reales."
+    },
+    "studies": {
+      "title": "Qué estudio",
+      "description": "Actualmente me dedico a profundizar mis conocimientos en desarrollo Full-Stack, arquitectura de software, seguridad de aplicaciones y plataformas SaaS. Combino formación técnica, estudio continuo y desarrollo de proyectos prácticos para evolucionar constantemente como profesional."
+    },
+    "mainTech": {
+      "title": "Tecnologías principales",
+      "description": "Trabajo principalmente con Next.js, React, TypeScript, PostgreSQL y Supabase, desarrollando aplicaciones modernas enfocadas en rendimiento, seguridad y escalabilidad. Complemento estas competencias con conocimientos de APIs, autenticación, bases de datos e infraestructuras cloud."
+    },
+    "goals": {
+      "title": "Objetivos profesionales",
+      "description": "Continuar evolucionando como Desarrollador Full-Stack a través de experiencia práctica, proyectos reales y formación continua. Entre mis objetivos futuros están ingresar en la Licenciatura en Ingeniería Informática y profundizar conocimientos en Ciberseguridad e Inteligencia Artificial, contribuyendo al desarrollo de soluciones tecnológicas innovadoras y seguras."
+    },
+    "viewCv": "Ver Currículum"
+  },
+  "highlights": {
+    "title": "Destacados Técnicos",
+    "subtitle": "Competencias demostradas en proyectos reales y en producción.",
+    "items": {
+      "saas": { "title": "Desarrollo SaaS", "description": "Plataformas multi-tenant con suscripciones, planes y gestión de usuarios." },
+      "multiTenant": { "title": "Arquitectura Multi-Tenant", "description": "Aislamiento de datos y lógica segregada por tenant con escalabilidad horizontal." },
+      "postgresql": { "title": "PostgreSQL", "description": "Modelado relacional, consultas optimizadas y migraciones en producción." },
+      "supabase": { "title": "Supabase", "description": "Autenticación, APIs en tiempo real y gestión de datos con PostgreSQL gestionado." },
+      "rls": { "title": "Seguridad RLS", "description": "Row Level Security para aislamiento riguroso de datos entre tenants." },
+      "stripe": { "title": "Stripe Connect", "description": "Pagos, suscripciones y reparto de ingresos entre plataforma y comerciantes." },
+      "rateLimiting": { "title": "Rate Limiting", "description": "Protección de APIs contra abuso con control de tasa de solicitudes." },
+      "cloudflare": { "title": "Cloudflare", "description": "CDN, protección DDoS y optimización de entrega de contenido global." },
+      "cicd": { "title": "CI/CD", "description": "Pipelines automatizados para despliegue continuo y calidad de código." },
+      "i18n": { "title": "Internacionalización", "description": "Websites multi-idioma con SEO internacional y hreflang." }
+    }
+  },
+  "featuredProject": {
+    "title": "Proyecto Principal",
+    "name": "FlowJersey",
+    "subtitle": "Plataforma SaaS Multi-Tenant",
+    "problem": "Los comerciantes de camisetas deportivas necesitan una forma simple y segura de crear tiendas online sin invertir en infraestructura técnica compleja.",
+    "solution": "FlowJersey es una plataforma SaaS multi-tenant que permite a cada comerciante crear su tienda online en una infraestructura compartida, con gestión de productos, pedidos, clientes y planes en un único dashboard.",
+    "audience": "Emprendedores y comerciantes del sector deportivo que quieren vender online de forma profesional y escalable.",
+    "why": "Desarrollado para aplicar en la práctica arquitectura SaaS, multi-tenancy, seguridad RLS e integraciones de pago reales.",
+    "problemLabel": "Problema",
+    "solutionLabel": "Solución",
+    "audienceLabel": "Público",
+    "whyLabel": "Por qué",
+    "technologiesTitle": "Tecnologías",
+    "featuresTitle": "Funcionalidades",
+    "challengesTitle": "Desafíos Técnicos",
+    "galleryTitle": "Galería",
+    "galleryPlaceholder": {
+      "badge": "En desarrollo",
+      "title": "Galería disponible próximamente",
+      "description": "FlowJersey se encuentra en desarrollo activo. La galería con capturas de la interfaz — dashboard, área de gestión y páginas públicas — se publicará cuando la plataforma alcance una etapa visual estable para demostración."
+    },
+    "features": [
+      "Multi-Tenant",
+      "Dashboard",
+      "Gestión de Productos",
+      "Gestión de Clientes",
+      "Gestión de Pedidos",
+      "Sistema de Planes",
+      "Stripe Connect",
+      "Seguridad RLS",
+      "Rate Limiting",
+      "Autenticación"
+    ],
+    "challenges": {
+      "multiTenancy": { "title": "Multi-Tenancy", "description": "Arquitectura aislada por tenant con datos segregados y escalabilidad horizontal." },
+      "security": { "title": "Seguridad", "description": "Autenticación, autorización y protección rigurosa de datos sensibles." },
+      "stripe": { "title": "Stripe", "description": "Integración de pagos, suscripciones y Stripe Connect para comerciantes." },
+      "rateLimiting": { "title": "Rate Limiting", "description": "Protección contra abuso con control de tasa de solicitudes vía Redis." },
+      "performance": { "title": "Rendimiento", "description": "Optimización de consultas, caching y renderizado para respuestas rápidas." },
+      "scalability": { "title": "Escalabilidad", "description": "Infraestructura preparada para crecimiento con Vercel y Cloudflare." }
+    },
+    "gallery": {
+      "dashboard": "Dashboard",
+      "products": "Gestión de Productos",
+      "orders": "Gestión de Pedidos",
+      "customers": "Gestión de Clientes",
+      "store": "Página de la Tienda",
+      "checkout": "Checkout",
+      "plans": "Planes",
+      "admin": "Administración"
+    },
+    "galleryPlaceholderItem": "Captura disponible próximamente"
+  },
+  "technologies": {
+    "title": "Tecnologías",
+    "subtitle": "Herramientas que utilizo y el valor que aportan a cada proyecto.",
+    "techCount": "{count} tecnologías",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de Datos",
+      "security": "Seguridad",
+      "infrastructure": "Infraestructura",
+      "tools": "Herramientas"
+    },
+    "items": {
+      "html": { "name": "HTML", "description": "Estructura semántica y accesible para contenido web." },
+      "css": { "name": "CSS", "description": "Estilización responsiva y layouts modernos." },
+      "javascript": { "name": "JavaScript", "description": "Lógica client-side e interactividad dinámica." },
+      "typescript": { "name": "TypeScript", "description": "Tipado estático para código más seguro y mantenible." },
+      "react": { "name": "React", "description": "Componentes reutilizables e interfaces reactivas." },
+      "nextjs": { "name": "Next.js", "description": "Framework full-stack con SSR, SSG y App Router." },
+      "tailwind": { "name": "Tailwind", "description": "Sistema de diseño utilitario para interfaces consistentes." },
+      "nodejs": { "name": "Node.js", "description": "Runtime JavaScript para APIs y lógica server-side." },
+      "nextjsApi": { "name": "Next.js API", "description": "Route handlers y server actions integrados." },
+      "postgresql": { "name": "PostgreSQL", "description": "Base de datos relacional robusta y escalable." },
+      "supabase": { "name": "Supabase", "description": "Backend-as-a-Service con PostgreSQL y autenticación." },
+      "rls": { "name": "RLS", "description": "Políticas de acceso a nivel de fila en la base de datos." },
+      "jwt": { "name": "JWT", "description": "Tokens seguros para autenticación stateless." },
+      "httpOnly": { "name": "Cookies HttpOnly", "description": "Sesiones protegidas contra ataques XSS." },
+      "rateLimiting": { "name": "Rate Limiting", "description": "Limitación de solicitudes para proteger APIs." },
+      "validation": { "name": "Validación", "description": "Validación y sanitización de inputs con Zod." },
+      "cloudflare": { "name": "Cloudflare", "description": "CDN, DNS y protección contra ataques." },
+      "vercel": { "name": "Vercel", "description": "Deploy edge y hosting optimizado para Next.js." },
+      "github": { "name": "GitHub", "description": "Control de versiones y colaboración en equipo." },
+      "git": { "name": "Git", "description": "Control de versiones distribuido para código." },
+      "vscode": { "name": "VS Code", "description": "Editor para desarrollo web y frontend." },
+      "intellij": { "name": "IntelliJ IDEA", "description": "IDE para Java y desarrollo backend." }
+    }
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "subtitle": "Formación continua y certificaciones obtenidas a lo largo de mi trayectoria profesional y académica.",
+    "viewCertificate": "Ver Certificado",
+    "empty": "No se encontraron certificaciones para este filtro.",
+    "stats": {
+      "completed": "Certificaciones Completadas",
+      "inProgress": "En Curso",
+      "planned": "Planificadas"
+    },
+    "filters": {
+      "label": "Filtrar certificaciones",
+      "all": "Todos",
+      "completed": "Completados",
+      "in_progress": "En Curso",
+      "planned": "Planificados"
+    },
+    "status": {
+      "completed": "Completado",
+      "in_progress": "En Curso",
+      "planned": "Planificado",
+      "renewal_required": "Renovación Necesaria"
+    },
+    "labels": {
+      "issuer": "Entidad",
+      "date": "Fecha",
+      "start": "Inicio",
+      "end": "Finalización",
+      "endInProgress": "En curso",
+      "status": "Estado",
+      "finalProject": "Proyecto Final",
+      "projectDefense": "Defensa del Proyecto",
+      "finalExam": "Examen Final",
+      "language": "Lenguaje",
+      "score": "{score}/{max} puntos"
+    },
+    "modal": {
+      "close": "Cerrar",
+      "noCredential": "El certificado estará disponible próximamente.",
+      "openExternal": "Abrir certificado",
+      "viewPdf": "Ver certificado PDF"
+    },
+    "items": {
+      "csharp-oop": {
+        "name": "Programación Orientada a Objetos",
+        "issuer": "Tokio School",
+        "language": "C#",
+        "description": "Formación enfocada en Programación Orientada a Objetos con C#, incluyendo encapsulamiento, herencia, polimorfismo y buenas prácticas de desarrollo."
+      },
+      "java-ocp": {
+        "name": "Programación Java: Certificación OCP",
+        "issuer": "Tokio School",
+        "language": "Java",
+        "description": "Formación orientada a la certificación Oracle Certified Professional (OCP) en Java, con foco en sintaxis avanzada, APIs y buenas prácticas."
+      },
+      "spring-boot": {
+        "name": "Especialización en Framework Spring Boot",
+        "issuer": "Tokio School",
+        "language": "Java",
+        "description": "Especialización en Spring Boot para desarrollo de aplicaciones Java empresariales, APIs REST, seguridad y arquitectura en capas."
+      },
+      "frontend-developer": {
+        "name": "Front-End Developer: HTML, CSS, JavaScript y React",
+        "issuer": "Tokio School",
+        "language": "HTML, CSS, JavaScript, React",
+        "description": "Formación completa en desarrollo front-end con HTML semántico, CSS moderno, JavaScript y React para interfaces web responsivas."
+      },
+      "ise-c-computer-engineering": {
+        "name": "Licenciatura en Ingeniería Informática",
+        "issuer": "ISEC — Instituto Superior de Engenharia de Coimbra",
+        "description": "Formación académica planificada en la Facultad ISEC, Coímbra, Portugal, con foco en desarrollo de software, sistemas, redes y competencias de ingeniería informática."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Evolución profesional y proyectos en desarrollo.",
+    "featured": "Proyecto Principal",
+    "saasBadge": "SaaS",
+    "inDevelopment": "En Desarrollo",
+    "comingSoon": "Próximamente",
+    "viewDetails": "Ver Detalles",
+    "technologiesLabel": "Tecnologías",
+    "highlightsLabel": "Destacados técnicos",
+    "githubLabel": "GitHub",
+    "demoLabel": "Demo",
+    "previewAriaLabel": "Ver galería FlowJersey — ampliar capturas de pantalla",
+    "flowjersey": {
+      "name": "FlowJersey",
+      "tagline": "Plataforma SaaS Multi-Tenant",
+      "description": "Plataforma SaaS multi-tenant para creación y gestión de tiendas online de camisetas deportivas, con suscripciones, pagos y aislamiento de datos por comerciante.",
+      "highlights": ["Arquitectura Multi-Tenant", "Stripe Connect", "Seguridad RLS", "Rate Limiting", "Dashboard Admin"]
+    },
+    "java": {
+      "name": "Proyectos Java",
+      "description": "Proyectos académicos y prácticos enfocados en Programación Orientada a Objetos, Estructuras de Datos y Spring Boot.",
+      "highlights": ["POO avanzada", "Interfaces y Polimorfismo", "Spring Boot", "APIs REST"]
+    }
+  },
+  "journey": {
+    "title": "Trayectoria",
+    "subtitle": "Formación, proyectos y evolución profesional.",
+    "futureLabel": "Futuro",
+    "plannedBadge": "Planificado",
+    "viewCv": "Ver Currículum",
+    "items": {
+      "fullstack-start": {
+        "title": "Inicio de la formación Full-Stack",
+        "description": "Inicio de la formación técnica en desarrollo web moderno, con foco en JavaScript, React y buenas prácticas de ingeniería de software."
+      },
+      "first-projects": {
+        "title": "Primeros proyectos React y Next.js",
+        "description": "Desarrollo de los primeros proyectos prácticos con React y Next.js, aplicando componentes, routing e integración con APIs."
+      },
+      "flowjersey": {
+        "title": "Desarrollo de la plataforma SaaS FlowJersey",
+        "description": "Construcción de FlowJersey — plataforma SaaS multi-tenant para e-commerce deportivo, con arquitectura escalable, pagos y seguridad."
+      },
+      "degree": {
+        "title": "Licenciatura en Ingeniería Informática",
+        "description": "Ingreso planificado en la Licenciatura en Ingeniería Informática en ISEC Coimbra, profundizando fundamentos de ingeniería de software y sistemas."
+      },
+      "cybersecurity": {
+        "title": "Especialización en Ciberseguridad",
+        "description": "Formación avanzada planificada en seguridad de aplicaciones, protección de datos y prácticas de defensa en sistemas web."
+      },
+      "ai": {
+        "title": "Especialización en Inteligencia Artificial",
+        "description": "Profundización planificada en IA aplicada al desarrollo de software y sistemas inteligentes."
+      }
+    }
+  },
+  "stats": {
+    "title": "En cifras",
+    "subtitle": "Competencias, dedicación y evolución continua.",
+    "items": {
+      "technologies": { "label": "Tecnologías" },
+      "languages": { "label": "Idiomas" },
+      "saas": { "label": "SaaS en desarrollo" },
+      "studyHours": { "label": "Horas de estudio" }
+    }
+  },
+  "cta": {
+    "title": "¿Construimos algo juntos?",
+    "description": "Estoy disponible para colaborar en proyectos web, plataformas SaaS y soluciones modernas para empresas y emprendedores.",
+    "button": "Contactar"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Interesado en colaborar? Envíame un mensaje.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "email@ejemplo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje...",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "Mensaje enviado con éxito.",
+      "error": "No se pudo enviar el mensaje. Inténtelo de nuevo.",
+      "validation": {
+        "nameRequired": "El nombre es obligatorio",
+        "nameMin": "El nombre debe tener al menos 2 caracteres",
+        "emailRequired": "El email es obligatorio",
+        "emailInvalid": "Email inválido",
+        "messageRequired": "El mensaje es obligatorio",
+        "messageMin": "El mensaje debe tener al menos 10 caracteres"
+      }
+    },
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "language": "Idioma",
+    "cv": "Curriculum Vitae"
+  },
+  "cv": {
+    "title": "Currículum",
+    "download": "Descargar CV",
+    "jobTitle": "Desarrollador Full-Stack",
+    "heroTagline": "Especializado en aplicaciones web modernas, plataformas SaaS y arquitectura escalable.",
+    "summary": [
+      "Desarrollador Full-Stack enfocado en el desarrollo de aplicaciones web modernas, plataformas SaaS y sistemas escalables.",
+      "Actualmente desarrollo FlowJersey, una plataforma SaaS multi-tenant construida con Next.js, TypeScript y PostgreSQL.",
+      "Tengo especial interés en arquitectura de software, seguridad aplicacional y sistemas escalables."
+    ],
+    "objectiveHighlight": "Seguir evolucionando como Desarrollador Full-Stack mediante la creación de productos reales y la profundización en Arquitectura de Software, Ciberseguridad e Inteligencia Artificial.",
+    "keySkillCards": [
+      { "title": "Arquitectura SaaS", "description": "Desarrollo de plataformas multi-tenant escalables." },
+      { "title": "Seguridad Aplicacional", "description": "Autenticación, RLS, rate limiting y protección de APIs." },
+      { "title": "PostgreSQL", "description": "Modelado relacional y optimización de consultas." },
+      { "title": "Cloud Infrastructure", "description": "Deploy, CDN, DNS y protección vía Cloudflare." },
+      { "title": "Next.js & TypeScript", "description": "Aplicaciones web modernas con tipado estático y rendimiento." },
+      { "title": "APIs REST", "description": "Integración backend, validación y arquitectura de servicios." }
+    ],
+    "technicalProfileCards": [
+      { "id": "web", "label": "Desarrollo Web" },
+      { "id": "frontend", "label": "Frontend Moderno" },
+      { "id": "backend", "label": "Backend" },
+      { "id": "database", "label": "Bases de Datos" },
+      { "id": "saas", "label": "Arquitectura SaaS" },
+      { "id": "security", "label": "Seguridad" },
+      { "id": "cloud", "label": "Cloud Infrastructure" }
+    ],
+    "interestTags": [
+      "SaaS",
+      "Arquitectura",
+      "Seguridad",
+      "Cloud",
+      "PostgreSQL",
+      "Inteligencia Artificial",
+      "Ciberseguridad",
+      "Desarrollo Web"
+    ],
+    "linkLabels": {
+      "website": "Website",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email",
+      "location": "Ubicación"
+    },
+    "mainProject": {
+      "name": "FlowJersey",
+      "badges": ["Proyecto Principal", "SaaS", "Multi-Tenant", "En Desarrollo"],
+      "description": [
+        "Plataforma SaaS multi-tenant desarrollada para la creación y gestión de tiendas online.",
+        "Incluye autenticación segura, aislamiento de datos por tenant, dashboards administrativos, sistema de suscripciones, integración Stripe y funcionalidades avanzadas de gestión.",
+        "Concebida con foco en escalabilidad, seguridad y experiencia de usuario."
+      ],
+      "statsTitle": "FlowJersey en Cifras",
+      "stats": [
+        { "value": "40+", "label": "módulos desarrollados" },
+        { "value": "3", "label": "idiomas soportados" },
+        { "label": "Sistema Multi-Tenant", "highlight": true },
+        { "label": "Dashboard Administrativo", "highlight": true },
+        { "label": "Stripe Connect", "highlight": true },
+        { "label": "Gestión de Productos", "highlight": true },
+        { "label": "Gestión de Pedidos", "highlight": true },
+        { "label": "Sistema de Planes", "highlight": true }
+      ],
+      "highlightsLabel": "Destacados Técnicos",
+      "highlightGroups": [
+        { "label": "Arquitectura", "items": ["Multi-Tenant", "Escalabilidad", "Internacionalización"] },
+        { "label": "Seguridad", "items": ["RLS", "Rate Limiting", "Autenticación", "Autorización"] },
+        { "label": "Producto", "items": ["Dashboard Admin", "Gestión de Productos", "Gestión de Pedidos", "Sistema de Planes"] },
+        { "label": "Pagos", "items": ["Stripe Connect"] }
+      ],
+      "metricsTitle": "Métricas Técnicas",
+      "technologyGroups": [
+        { "label": "Frontend", "items": ["Next.js", "React", "TypeScript", "Tailwind"] },
+        { "label": "Backend", "items": ["Node.js", "API Routes"] },
+        { "label": "Base de Datos", "items": ["PostgreSQL", "Supabase"] },
+        { "label": "Infraestructura", "items": ["Cloudflare", "Redis", "Vercel"] },
+        { "label": "Seguridad", "items": ["RLS", "JWT", "Rate Limiting", "Cookies HttpOnly"] },
+        { "label": "Pagos", "items": ["Stripe"] }
+      ]
+    },
+    "academicProjects": {
+      "java": {
+        "name": "Proyectos Java",
+        "description": "Proyectos académicos y prácticos con foco en POO, estructuras de datos y Spring Boot.",
+        "topics": [
+          "Programación Orientada a Objetos",
+          "Generics",
+          "Collections",
+          "Streams",
+          "Threads",
+          "Interfaces",
+          "Herencia",
+          "Polimorfismo",
+          "Spring Boot",
+          "APIs REST"
+        ]
+      }
+    },
+    "certificationGroups": {
+      "completed": "Completadas",
+      "in_progress": "En Curso"
+    },
+    "sections": {
+      "links": "Enlaces Profesionales",
+      "summary": "Resumen Profesional",
+      "objectives": "Objetivo Profesional",
+      "keySkills": "Competencias Principales",
+      "mainProject": "Proyecto Destacado",
+      "academicProjects": "Proyectos Académicos",
+      "technicalProfile": "Perfil Técnico",
+      "skills": "Competencias Técnicas",
+      "education": "Formación",
+      "educationCurrent": "Formación Actual",
+      "educationPlanned": "Formación Planificada",
+      "educationFutureAreas": "Áreas de Especialización Futuras",
+      "certifications": "Certificaciones",
+      "experience": "Experiencia Profesional",
+      "languages": "Idiomas",
+      "interests": "Intereses"
+    },
+    "labels": {
+      "backToPortfolio": "Volver al portafolio",
+      "languageLevel": "Nivel",
+      "languageName": "Idioma",
+      "caseStudy": "Case Study"
+    },
+    "educationStatus": {
+      "in_progress": "En Curso",
+      "planned": "Planificado"
+    },
+    "languageLevels": {
+      "native": "Nativo",
+      "advanced": "Avanzado",
+      "professional": "Profesional",
+      "intermediate": "Intermedio",
+      "basic": "Básico"
+    },
+    "languages": {
+      "pt": "Portugués",
+      "en": "Inglés",
+      "es": "Español"
+    },
+    "interests": {
+      "saas": "SaaS",
+      "security": "Seguridad",
+      "architecture": "Arquitectura",
+      "ai": "Inteligencia Artificial",
+      "cloud": "Cloud",
+      "postgresql": "PostgreSQL",
+      "cybersecurity": "Ciberseguridad",
+      "webdev": "Desarrollo Web"
+    },
+    "educationItems": {
+      "frontend-developer": {
+        "title": "Curso Full-Stack Developer",
+        "period": "2024 – 2026",
+        "statusKey": "in_progress"
+      },
+      "ise-c-computer-engineering": {
+        "title": "Licenciatura en Ingeniería Informática",
+        "statusKey": "planned"
+      },
+      "cybersecurity-specialization": { "title": "Ciberseguridad" },
+      "ai-specialization": { "title": "Inteligencia Artificial" }
+    },
+    "experienceItems": {}
+  },
+  "errors": {
+    "notFoundTitle": "Página no encontrada",
+    "notFoundDescription": "La página que busca no existe o ha sido movida.",
+    "notFoundBack": "Volver al inicio",
+    "errorTitle": "Algo salió mal",
+    "errorDescription": "Ocurrió un error inesperado. Inténtelo de nuevo.",
+    "errorRetry": "Reintentar"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo escuro",
+    "toggle": "Cambiar tema"
+  },
+  "language": {
+    "select": "Seleccionar idioma",
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  }
+}
