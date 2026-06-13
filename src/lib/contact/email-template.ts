@@ -1,7 +1,6 @@
 export type ContactEmailPayload = {
   name: string;
   email: string;
-  subject: string;
   message: string;
   sentAt: string;
   siteUrl: string;
@@ -11,7 +10,6 @@ const COLORS = {
   headerBg: "#020817",
   headerBorder: "#1e293b",
   primary: "#0284c7",
-  primaryHover: "#0369a1",
   bodyBg: "#f1f5f9",
   cardBg: "#ffffff",
   cardBorder: "#e2e8f0",
@@ -47,7 +45,7 @@ function infoCard(label: string, valueHtml: string): string {
 }
 
 export function buildContactEmailSubject(name: string): string {
-  return `[Portfolio] ${name} enviou uma mensagem`;
+  return `Nova mensagem de contacto - ${name}`;
 }
 
 export function formatContactSentAt(date = new Date()): string {
@@ -67,15 +65,33 @@ export function formatContactSentAt(date = new Date()): string {
   return `${datePart} · ${timePart}`;
 }
 
+export function buildContactEmailText(payload: ContactEmailPayload): string {
+  const { name, email, message, sentAt, siteUrl } = payload;
+
+  return [
+    "Nova mensagem de contacto",
+    "",
+    `Nome: ${name}`,
+    `Email: ${email}`,
+    `Data/Hora: ${sentAt}`,
+    "",
+    "Mensagem:",
+    message,
+    "",
+    `Enviada através de: ${siteUrl}`,
+  ].join("\n");
+}
+
 export function buildContactEmailHtml(payload: ContactEmailPayload): string {
-  const { name, email, subject, message, sentAt, siteUrl } = payload;
+  const { name, email, message, sentAt, siteUrl } = payload;
   const safeEmail = escapeHtml(email);
   const safeName = escapeHtml(name);
   const safeSiteHost = escapeHtml(siteUrl.replace(/^https?:\/\//, ""));
   const safeSiteUrl = escapeHtml(siteUrl);
   const messageHtml = escapeHtml(message).replace(/\n/g, "<br />");
-  const mailtoLink = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(`Re: ${subject}`)}`;
   const mailtoSimple = `mailto:${encodeURIComponent(email)}`;
+  const replySubject = encodeURIComponent(`Re: ${buildContactEmailSubject(name)}`);
+  const mailtoLink = `${mailtoSimple}?subject=${replySubject}`;
 
   const emailCard = infoCard(
     "Email",
@@ -96,7 +112,6 @@ export function buildContactEmailHtml(payload: ContactEmailPayload): string {
       <td align="center" style="padding:32px 16px;">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;width:100%;">
 
-          <!-- Header -->
           <tr>
             <td style="background-color:${COLORS.headerBg};border:1px solid ${COLORS.headerBorder};border-radius:12px 12px 0 0;padding:28px 28px 24px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -120,16 +135,13 @@ export function buildContactEmailHtml(payload: ContactEmailPayload): string {
             </td>
           </tr>
 
-          <!-- Body -->
           <tr>
             <td style="background-color:${COLORS.cardBg};border-left:1px solid ${COLORS.cardBorder};border-right:1px solid ${COLORS.cardBorder};padding:24px 28px 8px;">
 
               ${infoCard("Nome", safeName)}
               ${emailCard}
-              ${infoCard("Assunto", escapeHtml(subject))}
-              ${infoCard("Data", escapeHtml(sentAt))}
+              ${infoCard("Data/Hora", escapeHtml(sentAt))}
 
-              <!-- Message card -->
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin:4px 0 20px;">
                 <tr>
                   <td style="background-color:#f8fafc;border:1px solid ${COLORS.cardBorder};border-radius:10px;padding:18px 20px;">
@@ -143,7 +155,6 @@ export function buildContactEmailHtml(payload: ContactEmailPayload): string {
                 </tr>
               </table>
 
-              <!-- CTA -->
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:0 0 8px;">
                 <tr>
                   <td align="center" style="border-radius:8px;background-color:${COLORS.primary};">
@@ -157,7 +168,6 @@ export function buildContactEmailHtml(payload: ContactEmailPayload): string {
             </td>
           </tr>
 
-          <!-- Footer -->
           <tr>
             <td style="background-color:${COLORS.cardBg};border:1px solid ${COLORS.cardBorder};border-top:0;border-radius:0 0 12px 12px;padding:20px 28px 24px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">

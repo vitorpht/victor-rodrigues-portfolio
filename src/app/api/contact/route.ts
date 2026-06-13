@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
-import { buildContactEmailHtml, buildContactEmailSubject, formatContactSentAt } from "@/lib/contact/email-template";
+import {
+  buildContactEmailHtml,
+  buildContactEmailSubject,
+  buildContactEmailText,
+  formatContactSentAt,
+} from "@/lib/contact/email-template";
 import { getContactEnv } from "@/lib/env/contact";
 
-const EMAIL_SUBJECT_LINE = "Formulário de contacto";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://victorrodrigues.dev";
 
 const contactSchema = z.object({
@@ -32,8 +36,30 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+function stripHeaderInjection(input: string): string {
+  return input.replace(/[\r\n\t]/g, "").trim();
+}
+
 function sanitize(input: string): string {
-  return input.replace(/<[^>]*>/g, "").trim();
+  return stripHeaderInjection(input.replace(/<[^>]*>/g, ""));
+}
+
+function normalizeContactInput(data: z.infer<typeof contactSchema>) {
+  const name = sanitize(data.name);
+  const email = stripHeaderInjection(data.email).toLowerCase();
+  const message = sanitize(data.message);
+
+  const emailCheck = z.string().email().max(254).safeParse(email);
+  if (!emailCheck.success || !name || !message) {
+    return null;
+  }
+
+  return { name, email, message };
+}
+
+function buildReplyTo(name: string, email: string): string {
+  const safeName = stripHeaderInjection(name).replace(/[<>"]/g, "");
+  return `${safeName} <${email}>`;
 }
 
 function failure(message: string, status: number) {
@@ -65,28 +91,29 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
-    const sanitized = {
-      name: sanitize(result.data.name),
-      email: sanitize(result.data.email),
-      message: sanitize(result.data.message),
-    };
+    const sanitized = normalizeContactInput(result.data);
+    if (!sanitized) {
+      return failure("Invalid input", 400);
+    }
 
     const sentAt = formatContactSentAt();
+    const emailPayload = {
+      name: sanitized.name,
+      email: sanitized.email,
+      message: sanitized.message,
+      sentAt,
+      siteUrl: SITE_URL,
+    };
+
     const resend = new Resend(env.resendApiKey);
 
     const { data, error } = await resend.emails.send({
       from: env.resendFromEmail,
       to: env.contactEmail,
-      replyTo: sanitized.email,
+      replyTo: buildReplyTo(sanitized.name, sanitized.email),
       subject: buildContactEmailSubject(sanitized.name),
-      html: buildContactEmailHtml({
-        name: sanitized.name,
-        email: sanitized.email,
-        subject: EMAIL_SUBJECT_LINE,
-        message: sanitized.message,
-        sentAt,
-        siteUrl: SITE_URL,
-      }),
+      html: buildContactEmailHtml(emailPayload),
+      text: buildContactEmailText(emailPayload),
     });
 
     if (error || !data?.id) {
