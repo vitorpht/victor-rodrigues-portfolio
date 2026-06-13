@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
+import { buildContactEmailHtml, formatContactSentAt } from "@/lib/contact/email-template";
+import { getContactEnv } from "@/lib/env/contact";
+
+const CONTACT_SUBJECT = "[Portfolio] Nova mensagem de contacto";
+const EMAIL_SUBJECT_LINE = "Nova mensagem de contacto";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email().max(254),
   message: z.string().min(10).max(5000),
+  website: z.string().max(0).optional(),
 });
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -30,19 +36,21 @@ function sanitize(input: string): string {
   return input.replace(/<[^>]*>/g, "").trim();
 }
 
-function escapeHtml(input: string): string {
-  return input
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+function failure(message: string, status: number) {
+  return NextResponse.json({ success: false, error: message }, { status });
 }
 
 export async function POST(request: Request) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
   if (!checkRateLimit(ip)) {
-    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+    return failure("Too many requests", 429);
+  }
+
+  const env = getContactEnv();
+  if (!env) {
+    console.error("[Contact] Missing RESEND_API_KEY, CONTACT_EMAIL or RESEND_FROM_EMAIL");
+    return failure("Contact service unavailable", 503);
   }
 
   try {
@@ -50,48 +58,44 @@ export async function POST(request: Request) {
     const result = contactSchema.safeParse(body);
 
     if (!result.success) {
-      return NextResponse.json({ error: "Invalid input" }, { status: 400 });
+      return failure("Invalid input", 400);
     }
 
-    const { name, email, message } = result.data;
+    if (result.data.website && result.data.website.trim().length > 0) {
+      return NextResponse.json({ success: true });
+    }
+
     const sanitized = {
-      name: sanitize(name),
-      email: sanitize(email),
-      message: sanitize(message),
+      name: sanitize(result.data.name),
+      email: sanitize(result.data.email),
+      message: sanitize(result.data.message),
     };
 
-    const contactEmail = process.env.CONTACT_EMAIL;
-    const resendKey = process.env.RESEND_API_KEY;
+    const sentAt = formatContactSentAt();
+    const resend = new Resend(env.resendApiKey);
 
-    if (resendKey && contactEmail) {
-      const resend = new Resend(resendKey);
-      const from = process.env.RESEND_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>";
+    const { data, error } = await resend.emails.send({
+      from: env.resendFromEmail,
+      to: env.contactEmail,
+      replyTo: sanitized.email,
+      subject: CONTACT_SUBJECT,
+      html: buildContactEmailHtml({
+        name: sanitized.name,
+        email: sanitized.email,
+        subject: EMAIL_SUBJECT_LINE,
+        message: sanitized.message,
+        sentAt,
+      }),
+    });
 
-      const { error } = await resend.emails.send({
-        from,
-        to: contactEmail,
-        replyTo: sanitized.email,
-        subject: `[Portfólio] Mensagem de ${sanitized.name}`,
-        html: `
-          <h2>Nova mensagem do portfólio</h2>
-          <p><strong>Nome:</strong> ${escapeHtml(sanitized.name)}</p>
-          <p><strong>Email:</strong> ${escapeHtml(sanitized.email)}</p>
-          <p><strong>Mensagem:</strong></p>
-          <p>${escapeHtml(sanitized.message).replace(/\n/g, "<br>")}</p>
-        `,
-      });
-
-      if (error) {
-        console.error("[Contact] Resend error:", error);
-        return NextResponse.json({ error: "Email delivery failed" }, { status: 502 });
-      }
-    } else {
-      console.info("[Contact] RESEND_API_KEY or CONTACT_EMAIL not set — logging only:", sanitized);
+    if (error || !data?.id) {
+      console.error("[Contact] Resend delivery failed:", error?.name, error?.message);
+      return failure("Email delivery failed", 502);
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("[Contact] Unexpected error:", error);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    console.error("[Contact] Unexpected error:", error instanceof Error ? error.message : "Unknown error");
+    return failure("Internal error", 500);
   }
 }

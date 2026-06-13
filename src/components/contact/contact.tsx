@@ -30,10 +30,11 @@ export function Contact({ dict }: SectionProps) {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setStatus("idle");
     setFieldErrors({});
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const data = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
@@ -65,12 +66,19 @@ export function Contact({ dict }: SectionProps) {
           name: result.data.name,
           email: result.data.email,
           message: result.data.message,
+          website: result.data.website ?? "",
         }),
       });
 
-      if (!response.ok) throw new Error("Failed");
+      const payload = (await response.json().catch(() => null)) as { success?: boolean } | null;
+
+      if (!response.ok || !payload?.success) {
+        setStatus("error");
+        return;
+      }
+
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
     } catch {
       setStatus("error");
     } finally {
