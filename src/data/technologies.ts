@@ -6,8 +6,11 @@ export type TechKey =
   | "react"
   | "nextjs"
   | "tailwind"
+  | "bootstrap"
   | "nodejs"
   | "nextjsApi"
+  | "java"
+  | "csharp"
   | "postgresql"
   | "supabase"
   | "rls"
@@ -40,8 +43,8 @@ export const technologyCategoryOrder: TechCategory[] = [
 ];
 
 export const technologies: Record<TechCategory, TechKey[]> = {
-  frontend: ["html", "css", "javascript", "typescript", "react", "nextjs", "tailwind"],
-  backend: ["nodejs", "nextjsApi"],
+  frontend: ["html", "css", "javascript", "typescript", "react", "nextjs", "tailwind", "bootstrap"],
+  backend: ["nodejs", "nextjsApi", "java", "csharp"],
   database: ["postgresql", "supabase"],
   security: ["rls", "jwt", "httpOnly", "rateLimiting", "validation"],
   infrastructure: ["cloudflare", "vercel", "github"],
