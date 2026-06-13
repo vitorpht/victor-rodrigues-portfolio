@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
-import { buildContactEmailHtml, formatContactSentAt } from "@/lib/contact/email-template";
+import { buildContactEmailHtml, buildContactEmailSubject, formatContactSentAt } from "@/lib/contact/email-template";
 import { getContactEnv } from "@/lib/env/contact";
 
-const CONTACT_SUBJECT = "[Portfolio] Nova mensagem de contacto";
-const EMAIL_SUBJECT_LINE = "Nova mensagem de contacto";
+const EMAIL_SUBJECT_LINE = "Formulário de contacto";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://victorrodrigues.dev";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(100),
@@ -78,13 +78,14 @@ export async function POST(request: Request) {
       from: env.resendFromEmail,
       to: env.contactEmail,
       replyTo: sanitized.email,
-      subject: CONTACT_SUBJECT,
+      subject: buildContactEmailSubject(sanitized.name),
       html: buildContactEmailHtml({
         name: sanitized.name,
         email: sanitized.email,
         subject: EMAIL_SUBJECT_LINE,
         message: sanitized.message,
         sentAt,
+        siteUrl: SITE_URL,
       }),
     });
 
