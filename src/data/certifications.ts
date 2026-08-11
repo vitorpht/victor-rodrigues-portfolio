@@ -68,12 +68,14 @@ export const certifications: CertificationEntry[] = sortCertificationsByStartDat
     status: "completed",
     startDate: "2026-02-26",
     endDate: "2026-06-23",
+    grades: { finalProject: 97, projectDefense: 100 },
   },
   {
     id: "spring-boot",
     status: "completed",
     startDate: "2026-06-12",
     endDate: "2026-06-27",
+    grades: { finalProject: 100, projectDefense: 100 },
   },
 ]);
 
