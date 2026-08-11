@@ -7,6 +7,7 @@ export {
   getProjectMeta,
   getFeaturedProjects,
   FLOWJERSEY_TECHNOLOGIES,
+  DESBRAVADORES_TECHNOLOGIES,
   type ProjectId,
   type ProjectEntry,
   type ProjectStatus,

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Projects } from "@/components/projects/projects";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
+import { getDesbravadoresGalleryAssets } from "@/lib/desbravadores-screenshots";
 import { getFlowjerseyGalleryAssets } from "@/lib/flowjersey-screenshots";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -20,10 +21,16 @@ export default async function ProjectsPage({ params }: PageProps) {
   const locale = localeParam as Locale;
   const dict = await getDictionary(locale);
   const flowjerseyGallery = getFlowjerseyGalleryAssets();
+  const desbravadoresGallery = getDesbravadoresGalleryAssets();
 
   return (
     <div className="page-main">
-      <Projects dict={dict} locale={locale} flowjerseyGallery={flowjerseyGallery} />
+      <Projects
+        dict={dict}
+        locale={locale}
+        flowjerseyGallery={flowjerseyGallery}
+        desbravadoresGallery={desbravadoresGallery}
+      />
     </div>
   );
 }

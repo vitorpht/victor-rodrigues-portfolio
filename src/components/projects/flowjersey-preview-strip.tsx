@@ -3,12 +3,16 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FlowJerseyScreenshot } from "@/components/flowjersey/flowjersey-screenshot";
-import type { FlowJerseyGalleryItem, FlowJerseyGalleryKey } from "@/data/flowjersey-gallery";
 import { cn } from "@/lib/utils";
 
+type GalleryItem = {
+  key: string;
+  image: string;
+};
+
 type FlowJerseyPreviewStripProps = {
-  items: FlowJerseyGalleryItem[];
-  labels: Record<FlowJerseyGalleryKey, string>;
+  items: GalleryItem[];
+  labels: Record<string, string>;
   href: string;
   ariaLabel: string;
   screenshotsAvailable: boolean;
@@ -71,6 +75,7 @@ export function FlowJerseyPreviewStrip({
               title={labels[item.key]}
               available={screenshotsAvailable}
               compact
+              eager
             />
           </button>
         ))}

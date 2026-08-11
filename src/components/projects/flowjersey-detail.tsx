@@ -1,11 +1,13 @@
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import { FlowJerseyGallery } from "@/components/flowjersey/flowjersey-gallery";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageSection, SectionHeader } from "@/components/ui/section-header";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import type { FlowJerseyGalleryItem, FlowJerseyGalleryKey } from "@/data/flowjersey-gallery";
 import { getProject } from "@/data/projects";
+import { cn } from "@/lib/utils";
 import type { SectionProps } from "@/types";
 
 const challengeKeys = [
@@ -26,7 +28,8 @@ export function FlowJerseyDetail({
   const t = dict.featuredProject;
   const saasBadge = dict.projects.saasBadge;
   const galleryLabels = t.gallery as Record<FlowJerseyGalleryKey, string>;
-  const technologies = getProject("flowjersey").technologies;
+  const project = getProject("flowjersey");
+  const technologies = project.technologies;
 
   return (
     <PageSection labelledBy="flowjersey-title">
@@ -35,12 +38,22 @@ export function FlowJerseyDetail({
           <div className="flex flex-wrap items-center gap-2">
             <Badge>{saasBadge}</Badge>
             <Badge>{dict.projects.inDevelopment}</Badge>
-            <Badge className="border-border bg-muted text-foreground-secondary">{t.title}</Badge>
           </div>
           <h1 id="flowjersey-title" className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
             {t.name}
           </h1>
           <p className="mt-1 text-sm font-medium text-primary sm:text-base">{t.subtitle}</p>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ size: "sm" }), "mt-5")}
+            >
+              <ExternalLink className="h-4 w-4" />
+              {dict.projects.websiteLabel}
+            </a>
+          )}
         </div>
       </ScrollReveal>
 

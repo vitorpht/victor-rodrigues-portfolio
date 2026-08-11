@@ -5,15 +5,15 @@ Add professional photos here:
 - `victor.webp` — preferred (optimized WebP)
 - `victor.jpg` — fallback
 
-Screenshots for FlowJersey gallery:
+Screenshots for FlowJersey gallery (`screenshots/flowjersey/`):
 
-- `screenshots/dashboard.webp`
-- `screenshots/products.webp`
-- `screenshots/orders.webp`
-- `screenshots/customers.webp`
-- `screenshots/store.webp`
-- `screenshots/checkout.webp`
-- `screenshots/plans.webp`
-- `screenshots/admin.webp`
+- `Flowjersey-1.png` … `Flowjersey-4.png`
 
-PNG/JPG fallbacks are supported automatically.
+Screenshots for Desbravadores na Estrada (`screenshots/desbravadores/`):
+
+- `Desbravadores-1.png` / `.jpg` — Mockup completo
+- `Desbravadores-2.png` — Página inicial (desktop)
+- `Desbravadores-3.png` — Página inicial (tablet)
+- `Desbravadores-4.png` — Página inicial (mobile)
+
+PNG/JPG/WebP are supported automatically.

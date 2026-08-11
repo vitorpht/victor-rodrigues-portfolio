@@ -65,7 +65,7 @@ export default function OpenGraphImage() {
             color: "#64748b",
           }}
         >
-          <span>FlowJersey SaaS</span>
+          <span>Desbravadores na Estrada</span>
           <span>·</span>
           <span>victorrodrigues.dev</span>
         </div>

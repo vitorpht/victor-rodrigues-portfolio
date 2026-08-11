@@ -27,11 +27,15 @@
     },
     "projects": {
       "title": "Projects | Victor Rodrigues",
-      "description": "Projects by Victor Rodrigues — FlowJersey SaaS, Java projects and modern software development."
+      "description": "Projects by Victor Rodrigues — Desbravadores na Estrada, FlowJersey SaaS, Java projects and modern software development."
     },
     "flowjersey": {
       "title": "FlowJersey | Victor Rodrigues",
       "description": "FlowJersey — multi-tenant SaaS platform for sports e-commerce. Architecture, technologies and gallery."
+    },
+    "desbravadores": {
+      "title": "Desbravadores na Estrada | Victor Rodrigues",
+      "description": "Desbravadores na Estrada — WordPress travel blog website. Design, performance, mobile-first and gallery."
     },
     "journey": {
       "title": "Journey | Victor Rodrigues",
@@ -65,7 +69,7 @@
     "name": "Victor Rodrigues",
     "role": "Junior Full-Stack Developer | Computer Engineering Student",
     "description": "I build modern web applications and SaaS platforms using Next.js, TypeScript and PostgreSQL.",
-    "currentProject": "I'm currently building FlowJersey, a multi-tenant SaaS platform focused on sports e-commerce, with a strong emphasis on security, scalability and performance.",
+    "currentProject": "I built Desbravadores na Estrada, a WordPress website delivered to a real client — a travel blog focused on performance, mobile-first experience and intuitive content organization.",
     "viewProjects": "View Projects",
     "contact": "Get in Touch",
     "github": "GitHub",
@@ -164,12 +168,70 @@
     },
     "galleryPlaceholderItem": "Screenshot coming soon"
   },
+  "desbravadoresProject": {
+    "title": "Featured Project",
+    "name": "Desbravadores na Estrada",
+    "subtitle": "Travel Blog · Client Project",
+    "overview": "Desbravadores na Estrada is a website built for a travel blog, designed for intuitive navigation and to highlight content about destinations, experiences and itineraries. The project was built with WordPress and Elementor, prioritizing performance, easy content management and a consistent experience across devices.",
+    "problem": "Create a modern, easy-to-maintain website that could publish content organized by categories, with a strong focus on user experience and mobile optimization.",
+    "solution": "A WordPress solution with Elementor Pro was developed using a mobile-first approach, custom templates, a clear category structure and a clean design that makes reading and discovering new content easier.",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "technologiesTitle": "Technologies",
+    "featuresTitle": "Features",
+    "challengesTitle": "Technical Highlights",
+    "galleryTitle": "Gallery",
+    "features": [
+      "Custom homepage",
+      "Travel category system",
+      "Custom article templates",
+      "Responsive design",
+      "Custom header and footer",
+      "Performance optimization",
+      "Basic SEO",
+      "Automatic translation integration",
+      "Simplified management through WordPress"
+    ],
+    "challenges": {
+      "mobileFirst": {
+        "title": "Mobile First",
+        "description": "Interface designed for mobile first, with layouts adapted to every screen size."
+      },
+      "elementorThemeBuilder": {
+        "title": "Elementor Theme Builder",
+        "description": "Header, footer and global templates built with Elementor Pro Theme Builder."
+      },
+      "customTemplates": {
+        "title": "Custom templates",
+        "description": "Tailored layouts for articles and pages, aligned with the blog's identity."
+      },
+      "categories": {
+        "title": "Category organization",
+        "description": "Content structured by destinations and themes for easier discovery and navigation."
+      },
+      "designSystem": {
+        "title": "Design System",
+        "description": "Consistent typography, colors and components for a cohesive visual experience."
+      },
+      "performance": {
+        "title": "Optimized performance",
+        "description": "Image optimization, a lightweight structure and best practices for fast loading."
+      }
+    },
+    "gallery": {
+      "mockup": "Full Mockup",
+      "desktop": "Home",
+      "mobile": "About us"
+    },
+    "galleryPlaceholderItem": "Screenshot coming soon"
+  },
   "technologies": {
     "title": "Technologies",
     "subtitle": "Tools I use and the value they bring to each project.",
     "techCount": "{count} technologies",
     "categories": {
       "frontend": "Frontend",
+      "cms": "CMS",
       "backend": "Backend",
       "database": "Database",
       "security": "Security",
@@ -185,6 +247,10 @@
       "nextjs": { "name": "Next.js", "description": "Full-stack framework with SSR, SSG and App Router." },
       "tailwind": { "name": "Tailwind", "description": "Utility design system for consistent interfaces." },
       "bootstrap": { "name": "Bootstrap", "description": "CSS framework for responsive layouts and UI components." },
+      "wordpress": { "name": "WordPress", "description": "CMS for client websites, blogs and content management." },
+      "elementor": { "name": "Elementor PRO", "description": "Visual builder for pages, templates and responsive design." },
+      "rankMath": { "name": "Rank Math SEO", "description": "On-page optimization, metadata and technical SEO in WordPress." },
+      "pageSpeed": { "name": "PageSpeed Insights", "description": "Performance analysis and Core Web Vitals optimization." },
       "nodejs": { "name": "Node.js", "description": "JavaScript runtime for APIs and server-side logic." },
       "nextjsApi": { "name": "Next.js API", "description": "Integrated route handlers and server actions." },
       "java": { "name": "Java", "description": "Object-oriented language for backend and academic applications." },
@@ -280,22 +346,32 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Professional growth and projects in development.",
+    "subtitle": "Real client projects and products in development.",
     "featured": "Featured Project",
     "saasBadge": "SaaS",
+    "wordpressBadge": "WordPress",
     "inDevelopment": "In Development",
+    "completed": "Completed",
     "comingSoon": "Coming Soon",
     "viewDetails": "View Details",
     "technologiesLabel": "Technologies",
     "highlightsLabel": "Technical highlights",
     "githubLabel": "GitHub",
     "demoLabel": "Demo",
+    "websiteLabel": "Visit Website",
     "previewAriaLabel": "View FlowJersey gallery — open screenshots",
+    "desbravadoresPreviewAriaLabel": "View Desbravadores na Estrada gallery — open screenshots",
     "flowjersey": {
       "name": "FlowJersey",
       "tagline": "Multi-Tenant SaaS Platform",
       "description": "Multi-tenant SaaS platform for creating and managing online sports jersey stores, with subscriptions, payments and per-merchant data isolation.",
       "highlights": ["Multi-Tenant Architecture", "Stripe Connect", "RLS Security", "Rate Limiting", "Admin Dashboard"]
+    },
+    "desbravadores": {
+      "name": "Desbravadores na Estrada",
+      "tagline": "Travel Blog · Client Project",
+      "description": "Website built with WordPress and Elementor for a travel blog, focused on performance, mobile-first experience and intuitive content organization by destinations.",
+      "highlights": ["Client Project", "Mobile First", "Elementor Theme Builder", "Custom templates", "Optimized performance"]
     },
     "java": {
       "name": "Java Projects",
@@ -317,6 +393,10 @@
       "first-projects": {
         "title": "First React and Next.js projects",
         "description": "Built first practical projects with React and Next.js, applying components, routing and API integration."
+      },
+      "desbravadores": {
+        "title": "Desbravadores na Estrada website",
+        "description": "Development of a travel blog with WordPress and Elementor Pro, featuring mobile-first design, custom templates and content organized by destinations."
       },
       "flowjersey": {
         "title": "FlowJersey SaaS platform development",
@@ -390,9 +470,9 @@
     "jobTitle": "Full-Stack Developer",
     "heroTagline": "Specialized in modern web applications, SaaS platforms and scalable architecture.",
     "summary": [
-      "Full-Stack Developer focused on building modern web applications, SaaS platforms and scalable systems.",
-      "Currently developing FlowJersey, a multi-tenant SaaS platform built with Next.js, TypeScript and PostgreSQL.",
-      "I have a strong interest in software architecture, application security and scalable systems."
+      "Full-Stack Developer focused on building modern web applications, client websites and SaaS platforms.",
+      "I built Desbravadores na Estrada, a WordPress website delivered to a real client, with Elementor Pro, mobile-first design and performance optimization.",
+      "In parallel I am building FlowJersey, a multi-tenant SaaS platform with Next.js, TypeScript and PostgreSQL."
     ],
     "objectiveHighlight": "Continue growing as a Full-Stack Developer through building real products and deepening knowledge in Software Architecture, Cybersecurity and Artificial Intelligence.",
     "keySkillCards": [
@@ -430,39 +510,37 @@
       "location": "Location"
     },
     "mainProject": {
-      "name": "FlowJersey",
-      "badges": ["Featured Project", "SaaS", "Multi-Tenant", "In Development"],
+      "name": "Desbravadores na Estrada",
+      "badges": ["Featured Project", "WordPress", "Real Client", "Completed"],
       "description": [
-        "Multi-tenant SaaS platform built for creating and managing online stores.",
-        "Includes secure authentication, per-tenant data isolation, admin dashboards, subscription system, Stripe integration and advanced management features.",
-        "Designed with a focus on scalability, security and user experience."
+        "Website built for a real client — a travel blog with intuitive navigation and content organized by destinations.",
+        "Built with WordPress and Elementor Pro, using a mobile-first approach, custom templates and simplified content management.",
+        "Focused on performance, user experience and a clean, consistent visual identity across all devices."
       ],
-      "statsTitle": "FlowJersey in Numbers",
+      "statsTitle": "Desbravadores Highlights",
       "stats": [
-        { "value": "40+", "label": "modules developed" },
-        { "value": "3", "label": "languages supported" },
-        { "label": "Multi-Tenant System", "highlight": true },
-        { "label": "Admin Dashboard", "highlight": true },
-        { "label": "Stripe Connect", "highlight": true },
-        { "label": "Product Management", "highlight": true },
-        { "label": "Order Management", "highlight": true },
-        { "label": "Plans System", "highlight": true }
+        { "label": "Client Project", "highlight": true },
+        { "label": "Mobile First", "highlight": true },
+        { "label": "Elementor Theme Builder", "highlight": true },
+        { "label": "Responsive Design", "highlight": true },
+        { "label": "Custom Templates", "highlight": true },
+        { "label": "Basic SEO", "highlight": true },
+        { "label": "Performance Optimization", "highlight": true },
+        { "label": "WordPress Management", "highlight": true }
       ],
       "highlightsLabel": "Technical Highlights",
       "highlightGroups": [
-        { "label": "Architecture", "items": ["Multi-Tenant", "Scalability", "Internationalization"] },
-        { "label": "Security", "items": ["RLS", "Rate Limiting", "Authentication", "Authorization"] },
-        { "label": "Product", "items": ["Admin Dashboard", "Product Management", "Order Management", "Plans System"] },
-        { "label": "Payments", "items": ["Stripe Connect"] }
+        { "label": "Experience", "items": ["Mobile First", "UI/UX", "Responsive Design"] },
+        { "label": "WordPress", "items": ["Elementor Pro", "Theme Builder", "Custom templates"] },
+        { "label": "Content", "items": ["Travel categories", "Articles", "Automatic translation"] },
+        { "label": "Quality", "items": ["Performance", "Basic SEO", "Simplified management"] }
       ],
-      "metricsTitle": "Technical Metrics",
+      "metricsTitle": "Technical Stack",
       "technologyGroups": [
-        { "label": "Frontend", "items": ["Next.js", "React", "TypeScript", "Tailwind"] },
-        { "label": "Backend", "items": ["Node.js", "API Routes"] },
-        { "label": "Database", "items": ["PostgreSQL", "Supabase"] },
-        { "label": "Infrastructure", "items": ["Cloudflare", "Redis", "Vercel"] },
-        { "label": "Security", "items": ["RLS", "JWT", "Rate Limiting", "HttpOnly Cookies"] },
-        { "label": "Payments", "items": ["Stripe"] }
+        { "label": "CMS", "items": ["WordPress", "Elementor Pro"] },
+        { "label": "Frontend", "items": ["HTML5", "CSS3", "JavaScript"] },
+        { "label": "Backend", "items": ["PHP"] },
+        { "label": "Design", "items": ["Responsive Design", "UI/UX Design", "Design System"] }
       ]
     },
     "academicProjects": {

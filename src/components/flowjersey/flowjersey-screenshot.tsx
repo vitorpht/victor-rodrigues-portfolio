@@ -3,14 +3,19 @@
 import Image from "next/image";
 import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { FlowJerseyGalleryItem } from "@/data/flowjersey-gallery";
+
+type GalleryImageItem = {
+  image: string;
+};
 
 type FlowJerseyScreenshotProps = {
-  item: FlowJerseyGalleryItem;
+  item: GalleryImageItem;
   title: string;
   available: boolean;
   placeholderText?: string;
   priority?: boolean;
+  /** Força loading eager (ex.: miniaturas above-the-fold com o mesmo src da preview) */
+  eager?: boolean;
   compact?: boolean;
   className?: string;
 };
@@ -60,6 +65,7 @@ export function FlowJerseyScreenshot({
   available,
   placeholderText,
   priority,
+  eager,
   compact,
   className,
 }: FlowJerseyScreenshotProps) {
@@ -74,22 +80,25 @@ export function FlowJerseyScreenshot({
     );
   }
 
+  const loadEager = Boolean(priority || eager);
+
   return (
     <Image
       src={item.image}
       alt={title}
       fill
       className={cn("object-cover object-top", className)}
+      // Screenshots de UI perdem nitidez com AVIF/WebP — servir o ficheiro original
+      unoptimized={!compact}
+      quality={compact ? 90 : 100}
       sizes={
-        priority
-          ? "(max-width: 768px) 100vw, 640px"
-          : compact
-            ? "(max-width: 768px) 25vw, 160px"
-            : "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px"
+        compact
+          ? "(max-width: 768px) 25vw, 280px"
+          : "(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1920px"
       }
       priority={priority}
       fetchPriority={priority ? "high" : "auto"}
-      loading={priority ? undefined : "lazy"}
+      loading={loadEager ? "eager" : "lazy"}
     />
   );
 }

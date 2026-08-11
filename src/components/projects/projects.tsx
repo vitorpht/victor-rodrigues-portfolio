@@ -7,11 +7,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { PageSection, SectionHeader } from "@/components/ui/section-header";
 import { StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { FlowJerseyPreviewStrip } from "@/components/projects/flowjersey-preview-strip";
+import type { DesbravadoresGalleryItem, DesbravadoresGalleryKey } from "@/data/desbravadores-gallery";
 import type { FlowJerseyGalleryItem, FlowJerseyGalleryKey } from "@/data/flowjersey-gallery";
-import { getProject, projectIds, type ProjectStatus } from "@/data/projects";
+import { getProject, projectIds, type ProjectId, type ProjectStatus } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { routes } from "@/lib/routes";
+import type { Locale } from "@/lib/i18n";
 import type { SectionProps } from "@/types";
+
+type GalleryAssets = {
+  available: boolean;
+  items: { key: string; image: string }[];
+};
 
 function StatusBadge({
   status,
@@ -20,16 +27,11 @@ function StatusBadge({
   status: ProjectStatus;
   t: SectionProps["dict"]["projects"];
 }) {
-  if (status === "featured") {
-    return (
-      <>
-        <Badge>{t.saasBadge}</Badge>
-        <Badge className="border-border bg-muted text-foreground-secondary">{t.featured}</Badge>
-      </>
-    );
-  }
   if (status === "in_development") {
     return <Badge>{t.inDevelopment}</Badge>;
+  }
+  if (status === "completed") {
+    return <Badge className="border-border bg-muted text-foreground-secondary">{t.completed}</Badge>;
   }
   if (status === "coming_soon") {
     return <Badge className="border-border bg-muted text-foreground-secondary">{t.comingSoon}</Badge>;
@@ -37,16 +39,59 @@ function StatusBadge({
   return null;
 }
 
+function TypeBadge({
+  id,
+  t,
+}: {
+  id: ProjectId;
+  t: SectionProps["dict"]["projects"];
+}) {
+  if (id === "desbravadores") return <Badge>{t.wordpressBadge}</Badge>;
+  if (id === "flowjersey") return <Badge>{t.saasBadge}</Badge>;
+  return null;
+}
+
+function getDetailHref(id: ProjectId, locale: Locale): string | null {
+  if (id === "flowjersey") return routes.flowjersey(locale);
+  if (id === "desbravadores") return routes.desbravadores(locale);
+  return null;
+}
+
 export function Projects({
   dict,
   locale,
   flowjerseyGallery,
+  desbravadoresGallery,
 }: SectionProps & {
   flowjerseyGallery: { available: boolean; items: FlowJerseyGalleryItem[] };
+  desbravadoresGallery: { available: boolean; items: DesbravadoresGalleryItem[] };
 }) {
   const t = dict.projects;
-  const galleryLabels = dict.featuredProject.gallery as Record<FlowJerseyGalleryKey, string>;
-  const flowjerseyHref = routes.flowjersey(locale);
+  const flowjerseyLabels = dict.featuredProject.gallery as Record<FlowJerseyGalleryKey, string>;
+  const desbravadoresLabels = dict.desbravadoresProject.gallery as Record<
+    DesbravadoresGalleryKey,
+    string
+  >;
+
+  const galleries: Partial<Record<ProjectId, GalleryAssets>> = {
+    flowjersey: flowjerseyGallery,
+    desbravadores: desbravadoresGallery,
+  };
+
+  const galleryLabels: Partial<Record<ProjectId, Record<string, string>>> = {
+    flowjersey: flowjerseyLabels,
+    desbravadores: desbravadoresLabels,
+  };
+
+  const placeholderTexts: Partial<Record<ProjectId, string>> = {
+    flowjersey: dict.featuredProject.galleryPlaceholderItem,
+    desbravadores: dict.desbravadoresProject.galleryPlaceholderItem,
+  };
+
+  const previewAriaLabels: Partial<Record<ProjectId, string>> = {
+    flowjersey: t.previewAriaLabel,
+    desbravadores: t.desbravadoresPreviewAriaLabel,
+  };
 
   return (
     <PageSection labelledBy="projects-title" compact centered className="bg-background-secondary/50">
@@ -56,10 +101,13 @@ export function Projects({
         {projectIds.map((key) => {
           const project = t[key];
           const meta = getProject(key);
-          const isFeatured = key === "flowjersey";
+          const isFeatured = meta.featured;
           const technologies = meta.technologies;
           const highlights = "highlights" in project ? project.highlights : [];
-          const tagline = isFeatured && "tagline" in project ? project.tagline : null;
+          const tagline = "tagline" in project ? project.tagline : null;
+          const detailHref = meta.hasDetailPage ? getDetailHref(key, locale) : null;
+          const gallery = galleries[key];
+          const labels = galleryLabels[key];
 
           return (
             <StaggerItem key={key}>
@@ -71,8 +119,13 @@ export function Projects({
               >
                 <CardHeader className="flex-1 space-y-4 p-6 sm:p-7">
                   <div className="flex flex-wrap gap-1.5">
+                    <TypeBadge id={key} t={t} />
+                    {isFeatured && (
+                      <Badge className="border-border bg-muted text-foreground-secondary">
+                        {t.featured}
+                      </Badge>
+                    )}
                     <StatusBadge status={meta.status} t={t} />
-                    {isFeatured && <Badge>{t.inDevelopment}</Badge>}
                   </div>
 
                   <div>
@@ -101,14 +154,14 @@ export function Projects({
                 </CardHeader>
 
                 <CardContent className="flex flex-col justify-between gap-4 border-t border-border p-6 sm:p-7 lg:max-w-md lg:border-l lg:border-t-0">
-                  {isFeatured && (
+                  {gallery && labels && detailHref && (
                     <FlowJerseyPreviewStrip
-                      items={flowjerseyGallery.items}
-                      labels={galleryLabels}
-                      href={flowjerseyHref}
-                      ariaLabel={t.previewAriaLabel}
-                      screenshotsAvailable={flowjerseyGallery.available}
-                      placeholderText={dict.featuredProject.galleryPlaceholderItem}
+                      items={gallery.items}
+                      labels={labels}
+                      href={detailHref}
+                      ariaLabel={previewAriaLabels[key] ?? t.viewDetails}
+                      screenshotsAvailable={gallery.available}
+                      placeholderText={placeholderTexts[key] ?? ""}
                     />
                   )}
 
@@ -131,8 +184,8 @@ export function Projects({
                   )}
 
                   <div className="flex flex-wrap gap-2">
-                    {meta.hasDetailPage && (
-                      <Link href={flowjerseyHref} className={buttonVariants({ size: "sm" })}>
+                    {detailHref && (
+                      <Link href={detailHref} className={buttonVariants({ size: "sm" })}>
                         {t.viewDetails}
                         <ArrowRight className="h-4 w-4" />
                       </Link>
@@ -156,7 +209,9 @@ export function Projects({
                         className={buttonVariants({ variant: "outline", size: "sm" })}
                       >
                         <ExternalLink className="h-4 w-4" />
-                        {t.demoLabel}
+                        {key === "desbravadores" || key === "flowjersey"
+                          ? t.websiteLabel
+                          : t.demoLabel}
                       </a>
                     )}
                   </div>

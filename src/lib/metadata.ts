@@ -15,6 +15,7 @@ export type PageKey =
   | "certifications"
   | "projects"
   | "flowjersey"
+  | "desbravadores"
   | "journey"
   | "contact"
   | "cv";
@@ -27,6 +28,7 @@ const pagePaths: Record<PageKey, string> = {
   certifications: "/certifications",
   projects: "/projects",
   flowjersey: "/flowjersey",
+  desbravadores: "/desbravadores",
   journey: "/journey",
   contact: "/contact",
   cv: "/cv",
@@ -127,18 +129,12 @@ export function generateJsonLd(locale: Locale, dict: Dictionary) {
     },
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "FlowJersey",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web",
-      description: dict.featuredProject.solution,
+      "@type": "WebSite",
+      name: "Desbravadores na Estrada",
+      description: dict.desbravadoresProject.overview,
       author: {
         "@type": "Person",
         name: profile.name,
-      },
-      offers: {
-        "@type": "Offer",
-        category: "SaaS",
       },
     },
   ];

@@ -1,6 +1,11 @@
-export type ProjectId = "flowjersey";
+export type ProjectId = "desbravadores" | "flowjersey";
 
-export type ProjectStatus = "featured" | "in_development" | "active" | "coming_soon";
+export type ProjectStatus =
+  | "featured"
+  | "in_development"
+  | "active"
+  | "completed"
+  | "coming_soon";
 
 /** Stack partilhada — única fonte para projetos, FlowJersey e CV */
 export const FLOWJERSEY_TECHNOLOGIES = [
@@ -11,6 +16,17 @@ export const FLOWJERSEY_TECHNOLOGIES = [
   "Stripe",
   "Redis",
   "Cloudflare",
+] as const;
+
+export const DESBRAVADORES_TECHNOLOGIES = [
+  "WordPress",
+  "Elementor Pro",
+  "PHP",
+  "CSS3",
+  "JavaScript",
+  "HTML5",
+  "Responsive Design",
+  "UI/UX Design",
 ] as const;
 
 export type ProjectEntry = {
@@ -25,11 +41,20 @@ export type ProjectEntry = {
 
 export const projects: ProjectEntry[] = [
   {
-    id: "flowjersey",
+    id: "desbravadores",
     featured: true,
-    status: "featured",
+    status: "completed",
+    technologies: DESBRAVADORES_TECHNOLOGIES,
+    hasDetailPage: true,
+    demo: "https://desbravadoresnaestrada.com/",
+  },
+  {
+    id: "flowjersey",
+    featured: false,
+    status: "in_development",
     technologies: FLOWJERSEY_TECHNOLOGIES,
     hasDetailPage: true,
+    demo: "https://flowjersey.com/",
   },
 ];
 
