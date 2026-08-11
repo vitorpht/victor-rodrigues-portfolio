@@ -5,7 +5,15 @@ export type ExperienceEntry = {
   startDate: string;
   endDate?: string;
   current?: boolean;
+  url?: string;
 };
 
-/** Preparado para experiências profissionais futuras */
-export const experience: ExperienceEntry[] = [];
+export const experience: ExperienceEntry[] = [
+  {
+    id: "jweb-internship",
+    company: "jweb",
+    startDate: "2026-09-07",
+    endDate: "2026-10-29",
+    url: "https://jweb.pt/",
+  },
+];

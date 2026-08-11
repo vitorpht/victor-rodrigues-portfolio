@@ -402,6 +402,11 @@
         "title": "Desenvolvimento da plataforma SaaS FlowJersey",
         "description": "Construção da FlowJersey — plataforma SaaS multi-tenant para e-commerce desportivo, com arquitetura escalável, pagamentos e segurança."
       },
+      "jweb-internship": {
+        "title": "Estágio na jweb",
+        "period": "Setembro - Outubro/2026",
+        "description": "Estágio profissional na Jweb, realizado entre 7 de setembro e 29 de outubro de 2026, com uma carga horária total de 300 horas. Experiência prática em ambiente profissional, acompanhada pelo responsável de estágio, José Oliveira."
+      },
       "degree": {
         "title": "Licenciatura em Engenharia Informática",
         "description": "Ingresso planeado na Licenciatura em Engenharia Informática no ISEC Coimbra, aprofundando fundamentos de engenharia de software e sistemas."
@@ -628,7 +633,12 @@
       "cybersecurity-specialization": { "title": "Cibersegurança" },
       "ai-specialization": { "title": "Inteligência Artificial" }
     },
-    "experienceItems": {}
+    "experienceItems": {
+      "jweb-internship": {
+        "title": "Estágio — jweb",
+        "description": "Estágio profissional na Jweb, realizado entre 7 de setembro e 29 de outubro de 2026, com uma carga horária total de 300 horas. Experiência prática em ambiente profissional, acompanhada pelo responsável de estágio, José Oliveira."
+      }
+    }
   },
   "errors": {
     "notFoundTitle": "Página não encontrada",

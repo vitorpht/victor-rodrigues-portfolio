@@ -65,13 +65,15 @@ export const certifications: CertificationEntry[] = sortCertificationsByStartDat
   },
   {
     id: "java-ocp",
-    status: "in_progress",
+    status: "completed",
     startDate: "2026-02-26",
+    endDate: "2026-06-23",
   },
   {
     id: "spring-boot",
-    status: "in_progress",
+    status: "completed",
     startDate: "2026-06-12",
+    endDate: "2026-06-27",
   },
 ]);
 

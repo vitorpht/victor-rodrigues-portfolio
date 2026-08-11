@@ -402,6 +402,11 @@
         "title": "FlowJersey SaaS platform development",
         "description": "Building FlowJersey — multi-tenant SaaS platform for sports e-commerce with scalable architecture, payments and security."
       },
+      "jweb-internship": {
+        "title": "Internship at jweb",
+        "period": "September - October/2026",
+        "description": "Professional internship at Jweb, completed between 7 September and 29 October 2026, totaling 300 hours. Hands-on experience in a professional environment, supervised by internship mentor José Oliveira."
+      },
       "degree": {
         "title": "Computer Engineering degree",
         "description": "Planned enrollment in a Computer Engineering degree at ISEC Coimbra, deepening software engineering and systems fundamentals."
@@ -628,7 +633,12 @@
       "cybersecurity-specialization": { "title": "Cybersecurity" },
       "ai-specialization": { "title": "Artificial Intelligence" }
     },
-    "experienceItems": {}
+    "experienceItems": {
+      "jweb-internship": {
+        "title": "Internship — jweb",
+        "description": "Professional internship at Jweb, completed between 7 September and 29 October 2026, totaling 300 hours. Hands-on experience in a professional environment, supervised by internship mentor José Oliveira."
+      }
+    }
   },
   "errors": {
     "notFoundTitle": "Page not found",

@@ -17,7 +17,9 @@ export function Journey({ dict, locale }: SectionProps) {
 
         {timelineEntries.map((entry) => {
           const item = t.items[entry.id as keyof typeof t.items];
-          const periodLabel = entry.isFuture ? t.futureLabel : entry.period;
+          const periodLabel = entry.isFuture
+            ? t.futureLabel
+            : ("period" in item && item.period ? item.period : entry.period);
 
           return (
             <StaggerItem key={entry.id}>
