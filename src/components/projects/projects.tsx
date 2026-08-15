@@ -8,6 +8,7 @@ import { PageSection, SectionHeader } from "@/components/ui/section-header";
 import { StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { FlowJerseyPreviewStrip } from "@/components/projects/flowjersey-preview-strip";
 import type { DesbravadoresGalleryItem, DesbravadoresGalleryKey } from "@/data/desbravadores-gallery";
+import type { DservicesGalleryItem, DservicesGalleryKey } from "@/data/dservices-gallery";
 import type { FlowJerseyGalleryItem, FlowJerseyGalleryKey } from "@/data/flowjersey-gallery";
 import { getProject, projectIds, type ProjectId, type ProjectStatus } from "@/data/projects";
 import { cn } from "@/lib/utils";
@@ -47,6 +48,7 @@ function TypeBadge({
   t: SectionProps["dict"]["projects"];
 }) {
   if (id === "desbravadores") return <Badge>{t.wordpressBadge}</Badge>;
+  if (id === "dservices") return <Badge>{t.nextjsBadge}</Badge>;
   if (id === "flowjersey") return <Badge>{t.saasBadge}</Badge>;
   return null;
 }
@@ -54,6 +56,7 @@ function TypeBadge({
 function getDetailHref(id: ProjectId, locale: Locale): string | null {
   if (id === "flowjersey") return routes.flowjersey(locale);
   if (id === "desbravadores") return routes.desbravadores(locale);
+  if (id === "dservices") return routes.dservices(locale);
   return null;
 }
 
@@ -62,9 +65,11 @@ export function Projects({
   locale,
   flowjerseyGallery,
   desbravadoresGallery,
+  dservicesGallery,
 }: SectionProps & {
   flowjerseyGallery: { available: boolean; items: FlowJerseyGalleryItem[] };
   desbravadoresGallery: { available: boolean; items: DesbravadoresGalleryItem[] };
+  dservicesGallery: { available: boolean; items: DservicesGalleryItem[] };
 }) {
   const t = dict.projects;
   const flowjerseyLabels = dict.featuredProject.gallery as Record<FlowJerseyGalleryKey, string>;
@@ -72,25 +77,31 @@ export function Projects({
     DesbravadoresGalleryKey,
     string
   >;
+  const dservicesProject = dict.dservicesProject;
+  const dservicesLabels = (dservicesProject?.gallery ?? {}) as Record<DservicesGalleryKey, string>;
 
   const galleries: Partial<Record<ProjectId, GalleryAssets>> = {
     flowjersey: flowjerseyGallery,
     desbravadores: desbravadoresGallery,
+    dservices: dservicesGallery,
   };
 
   const galleryLabels: Partial<Record<ProjectId, Record<string, string>>> = {
     flowjersey: flowjerseyLabels,
     desbravadores: desbravadoresLabels,
+    dservices: dservicesLabels,
   };
 
   const placeholderTexts: Partial<Record<ProjectId, string>> = {
     flowjersey: dict.featuredProject.galleryPlaceholderItem,
     desbravadores: dict.desbravadoresProject.galleryPlaceholderItem,
+    dservices: dservicesProject?.galleryPlaceholderItem ?? "",
   };
 
   const previewAriaLabels: Partial<Record<ProjectId, string>> = {
     flowjersey: t.previewAriaLabel,
     desbravadores: t.desbravadoresPreviewAriaLabel,
+    dservices: t.dservicesPreviewAriaLabel,
   };
 
   return (
@@ -100,6 +111,8 @@ export function Projects({
       <StaggerContainer className="mt-8 flex flex-col gap-6" stagger={0.07}>
         {projectIds.map((key) => {
           const project = t[key];
+          if (!project || typeof project !== "object") return null;
+
           const meta = getProject(key);
           const isFeatured = meta.featured;
           const technologies = meta.technologies;
@@ -209,7 +222,7 @@ export function Projects({
                         className={buttonVariants({ variant: "outline", size: "sm" })}
                       >
                         <ExternalLink className="h-4 w-4" />
-                        {key === "desbravadores" || key === "flowjersey"
+                        {key === "desbravadores" || key === "dservices" || key === "flowjersey"
                           ? t.websiteLabel
                           : t.demoLabel}
                       </a>

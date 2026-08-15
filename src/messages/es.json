@@ -27,7 +27,7 @@
     },
     "projects": {
       "title": "Proyectos | Victor Rodrigues",
-      "description": "Proyectos de Victor Rodrigues — Desbravadores na Estrada, FlowJersey SaaS, proyectos Java y desarrollo de software moderno."
+      "description": "Proyectos de Victor Rodrigues — D.Services Limpezas, Desbravadores na Estrada, FlowJersey SaaS, proyectos Java y desarrollo de software moderno."
     },
     "flowjersey": {
       "title": "FlowJersey | Victor Rodrigues",
@@ -36,6 +36,10 @@
     "desbravadores": {
       "title": "Desbravadores na Estrada | Victor Rodrigues",
       "description": "Desbravadores na Estrada — sitio WordPress para blog de viajes. Diseño, rendimiento, mobile-first y galería."
+    },
+    "dservices": {
+      "title": "D.Services Limpezas | Victor Rodrigues",
+      "description": "D.Services Limpezas — sitio web institucional en Next.js para una empresa de limpieza en Figueira da Foz. Diseño, SEO y galería."
     },
     "journey": {
       "title": "Trayectoria | Victor Rodrigues",
@@ -225,6 +229,65 @@
     },
     "galleryPlaceholderItem": "Captura disponible próximamente"
   },
+  "dservicesProject": {
+    "title": "Proyecto para cliente",
+    "name": "D.Services Limpezas, Lda",
+    "subtitle": "Sitio web institucional · Proyecto para cliente",
+    "overview": "D.Services Limpezas es una empresa de limpieza profesional en Figueira da Foz. El sitio web institucional se desarrolló en Next.js para presentar servicios, reforzar la confianza y facilitar la solicitud de presupuesto, con una experiencia clara y moderna en cualquier dispositivo.",
+    "problem": "La empresa necesitaba una presencia digital profesional que comunicara servicios de limpieza de oficinas, residencias y post-obra, con un recorrido sencillo hasta la solicitud de presupuesto.",
+    "solution": "Se desarrolló un sitio web institucional en Next.js, con identidad visual propia, páginas de servicios, FAQ, información legal y un flujo directo de contacto para presupuesto, optimizado para rendimiento, SEO y uso en móvil.",
+    "problemLabel": "Problema",
+    "solutionLabel": "Solución",
+    "technologiesTitle": "Tecnologías",
+    "featuresTitle": "Funcionalidades",
+    "challengesTitle": "Destacados técnicos",
+    "galleryTitle": "Galería",
+    "features": [
+      "Página de inicio institucional",
+      "Presentación de servicios",
+      "Solicitud de presupuesto",
+      "Preguntas frecuentes",
+      "Páginas legales",
+      "Diseño responsive",
+      "SEO on-page",
+      "Identidad visual consistente",
+      "Navegación clara y accesible"
+    ],
+    "challenges": {
+      "nextjs": {
+        "title": "Next.js",
+        "description": "Sitio construido con App Router, componentes reutilizables y una base lista para evolucionar."
+      },
+      "visualIdentity": {
+        "title": "Identidad visual",
+        "description": "Tipografía, colores y componentes alineados con la imagen premium de la empresa."
+      },
+      "responsive": {
+        "title": "Diseño responsive",
+        "description": "Layout pensado para escritorio y móvil, con lectura clara en cualquier pantalla."
+      },
+      "seo": {
+        "title": "SEO",
+        "description": "Estructura semántica, metadatos y contenidos pensados para búsqueda local en Figueira da Foz."
+      },
+      "conversion": {
+        "title": "Solicitud de presupuesto",
+        "description": "Recorrido directo del visitante al contacto, con llamadas a la acción visibles en todo el sitio."
+      },
+      "performance": {
+        "title": "Rendimiento",
+        "description": "Páginas ligeras y optimizadas para una carga rápida y una experiencia fluida."
+      }
+    },
+    "gallery": {
+      "mockup": "Mockup Completo",
+      "desktop": "Inicio",
+      "services": "Servicios",
+      "about": "Sobre Nosotros",
+      "contact": "Contacto"
+    },
+    "galleryPlaceholderItem": "Captura disponible próximamente"
+  },
   "technologies": {
     "title": "Tecnologías",
     "subtitle": "Herramientas que utilizo y el valor que aportan a cada proyecto.",
@@ -350,6 +413,7 @@
     "featured": "Proyecto Principal",
     "saasBadge": "SaaS",
     "wordpressBadge": "WordPress",
+    "nextjsBadge": "Next.js",
     "inDevelopment": "En Desarrollo",
     "completed": "Completado",
     "comingSoon": "Próximamente",
@@ -361,6 +425,7 @@
     "websiteLabel": "Visitar Sitio Web",
     "previewAriaLabel": "Ver galería FlowJersey — ampliar capturas de pantalla",
     "desbravadoresPreviewAriaLabel": "Ver galería Desbravadores na Estrada — ampliar capturas de pantalla",
+    "dservicesPreviewAriaLabel": "Ver galería D.Services Limpezas — ampliar capturas de pantalla",
     "flowjersey": {
       "name": "FlowJersey",
       "tagline": "Plataforma SaaS Multi-Tenant",
@@ -372,6 +437,12 @@
       "tagline": "Blog de Viajes · Proyecto para Cliente",
       "description": "Sitio web desarrollado en WordPress y Elementor para un blog de viajes, con foco en rendimiento, experiencia mobile-first y organización intuitiva de contenidos por destinos.",
       "highlights": ["Proyecto para Cliente", "Mobile First", "Elementor Theme Builder", "Plantillas personalizadas", "Rendimiento optimizado"]
+    },
+    "dservices": {
+      "name": "D.Services Limpezas, Lda",
+      "tagline": "Sitio web institucional · Proyecto para cliente",
+      "description": "Sitio web institucional desarrollado para D.Services Limpezas, empresa de limpieza profesional en Figueira da Foz. Presenta servicios, solicitud de presupuesto e información de la empresa, con foco en claridad, confianza y una experiencia moderna en cualquier dispositivo.",
+      "highlights": ["Proyecto para cliente", "Next.js", "Diseño responsive", "SEO", "Solicitud de presupuesto"]
     },
     "java": {
       "name": "Proyectos Java",
@@ -389,18 +460,6 @@
       "fullstack-start": {
         "title": "Inicio de la formación Full-Stack",
         "description": "Inicio de la formación técnica en desarrollo web moderno, con foco en JavaScript, React y buenas prácticas de ingeniería de software."
-      },
-      "first-projects": {
-        "title": "Primeros proyectos React y Next.js",
-        "description": "Desarrollo de los primeros proyectos prácticos con React y Next.js, aplicando componentes, routing e integración con APIs."
-      },
-      "desbravadores": {
-        "title": "Sitio web Desbravadores na Estrada",
-        "description": "Desarrollo de un blog de viajes con WordPress y Elementor Pro, con diseño mobile-first, plantillas personalizadas y organización de contenidos por destinos."
-      },
-      "flowjersey": {
-        "title": "Desarrollo de la plataforma SaaS FlowJersey",
-        "description": "Construcción de FlowJersey — plataforma SaaS multi-tenant para e-commerce deportivo, con arquitectura escalable, pagos y seguridad."
       },
       "jweb-internship": {
         "title": "Prácticas en jweb",

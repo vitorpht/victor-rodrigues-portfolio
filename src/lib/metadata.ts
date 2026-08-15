@@ -16,6 +16,7 @@ export type PageKey =
   | "projects"
   | "flowjersey"
   | "desbravadores"
+  | "dservices"
   | "journey"
   | "contact"
   | "cv";
@@ -29,6 +30,7 @@ const pagePaths: Record<PageKey, string> = {
   projects: "/projects",
   flowjersey: "/flowjersey",
   desbravadores: "/desbravadores",
+  dservices: "/dservices",
   journey: "/journey",
   contact: "/contact",
   cv: "/cv",
@@ -108,7 +110,7 @@ export function generatePageMetadata(
 export function generateJsonLd(locale: Locale, dict: Dictionary) {
   const url = `${BASE_URL}/${locale}`;
 
-  return [
+  const entries: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -127,7 +129,10 @@ export function generateJsonLd(locale: Locale, dict: Dictionary) {
       description: dict.meta.description,
       inLanguage: locale,
     },
-    {
+  ];
+
+  if (dict.desbravadoresProject?.overview) {
+    entries.push({
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Desbravadores na Estrada",
@@ -136,6 +141,22 @@ export function generateJsonLd(locale: Locale, dict: Dictionary) {
         "@type": "Person",
         name: profile.name,
       },
-    },
-  ];
+    });
+  }
+
+  if (dict.dservicesProject?.overview) {
+    entries.push({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "D.Services Limpezas",
+      url: "https://dservices.pt/",
+      description: dict.dservicesProject.overview,
+      author: {
+        "@type": "Person",
+        name: profile.name,
+      },
+    });
+  }
+
+  return entries;
 }

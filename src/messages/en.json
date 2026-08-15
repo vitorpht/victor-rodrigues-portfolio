@@ -27,7 +27,7 @@
     },
     "projects": {
       "title": "Projects | Victor Rodrigues",
-      "description": "Projects by Victor Rodrigues — Desbravadores na Estrada, FlowJersey SaaS, Java projects and modern software development."
+      "description": "Projects by Victor Rodrigues — D.Services Limpezas, Desbravadores na Estrada, FlowJersey SaaS, Java projects and modern software development."
     },
     "flowjersey": {
       "title": "FlowJersey | Victor Rodrigues",
@@ -36,6 +36,10 @@
     "desbravadores": {
       "title": "Desbravadores na Estrada | Victor Rodrigues",
       "description": "Desbravadores na Estrada — WordPress travel blog website. Design, performance, mobile-first and gallery."
+    },
+    "dservices": {
+      "title": "D.Services Limpezas | Victor Rodrigues",
+      "description": "D.Services Limpezas — Next.js corporate website for a cleaning company in Figueira da Foz. Design, SEO and gallery."
     },
     "journey": {
       "title": "Journey | Victor Rodrigues",
@@ -225,6 +229,65 @@
     },
     "galleryPlaceholderItem": "Screenshot coming soon"
   },
+  "dservicesProject": {
+    "title": "Client Project",
+    "name": "D.Services Limpezas, Lda",
+    "subtitle": "Corporate Website · Client Project",
+    "overview": "D.Services Limpezas is a professional cleaning company in Figueira da Foz. The corporate website was built with Next.js to present services, build trust and make it easy to request a quote, with a clear, modern experience on any device.",
+    "problem": "The company needed a professional digital presence to communicate office, residential and post-construction cleaning services, with a simple path to requesting a quote.",
+    "solution": "A Next.js corporate website was developed with a distinct visual identity, service pages, FAQ, legal information and a direct contact flow for quotes, optimized for performance, SEO and mobile use.",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "technologiesTitle": "Technologies",
+    "featuresTitle": "Features",
+    "challengesTitle": "Technical Highlights",
+    "galleryTitle": "Gallery",
+    "features": [
+      "Corporate homepage",
+      "Services presentation",
+      "Quote request",
+      "Frequently asked questions",
+      "Legal pages",
+      "Responsive design",
+      "On-page SEO",
+      "Consistent visual identity",
+      "Clear, accessible navigation"
+    ],
+    "challenges": {
+      "nextjs": {
+        "title": "Next.js",
+        "description": "Website built with the App Router, reusable components and a foundation ready to evolve."
+      },
+      "visualIdentity": {
+        "title": "Visual identity",
+        "description": "Typography, colors and components aligned with the company's premium image."
+      },
+      "responsive": {
+        "title": "Responsive design",
+        "description": "Layout designed for desktop and mobile, with clear reading on any screen."
+      },
+      "seo": {
+        "title": "SEO",
+        "description": "Semantic structure, metadata and content tailored for local search in Figueira da Foz."
+      },
+      "conversion": {
+        "title": "Quote request",
+        "description": "A direct path from visitor to contact, with calls to action visible throughout the site."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Lightweight pages optimized for fast loading and a smooth experience."
+      }
+    },
+    "gallery": {
+      "mockup": "Full Mockup",
+      "desktop": "Home",
+      "services": "Services",
+      "about": "About Us",
+      "contact": "Contact"
+    },
+    "galleryPlaceholderItem": "Screenshot coming soon"
+  },
   "technologies": {
     "title": "Technologies",
     "subtitle": "Tools I use and the value they bring to each project.",
@@ -350,6 +413,7 @@
     "featured": "Featured Project",
     "saasBadge": "SaaS",
     "wordpressBadge": "WordPress",
+    "nextjsBadge": "Next.js",
     "inDevelopment": "In Development",
     "completed": "Completed",
     "comingSoon": "Coming Soon",
@@ -361,6 +425,7 @@
     "websiteLabel": "Visit Website",
     "previewAriaLabel": "View FlowJersey gallery — open screenshots",
     "desbravadoresPreviewAriaLabel": "View Desbravadores na Estrada gallery — open screenshots",
+    "dservicesPreviewAriaLabel": "View D.Services Limpezas gallery — open screenshots",
     "flowjersey": {
       "name": "FlowJersey",
       "tagline": "Multi-Tenant SaaS Platform",
@@ -372,6 +437,12 @@
       "tagline": "Travel Blog · Client Project",
       "description": "Website built with WordPress and Elementor for a travel blog, focused on performance, mobile-first experience and intuitive content organization by destinations.",
       "highlights": ["Client Project", "Mobile First", "Elementor Theme Builder", "Custom templates", "Optimized performance"]
+    },
+    "dservices": {
+      "name": "D.Services Limpezas, Lda",
+      "tagline": "Corporate Website · Client Project",
+      "description": "Corporate website built for D.Services Limpezas, a professional cleaning company in Figueira da Foz. It presents services, a quote request flow and company information, with a focus on clarity, trust and a modern experience on any device.",
+      "highlights": ["Client Project", "Next.js", "Responsive design", "SEO", "Quote request"]
     },
     "java": {
       "name": "Java Projects",
@@ -389,18 +460,6 @@
       "fullstack-start": {
         "title": "Started Full-Stack training",
         "description": "Began technical training in modern web development, focusing on JavaScript, React and software engineering best practices."
-      },
-      "first-projects": {
-        "title": "First React and Next.js projects",
-        "description": "Built first practical projects with React and Next.js, applying components, routing and API integration."
-      },
-      "desbravadores": {
-        "title": "Desbravadores na Estrada website",
-        "description": "Development of a travel blog with WordPress and Elementor Pro, featuring mobile-first design, custom templates and content organized by destinations."
-      },
-      "flowjersey": {
-        "title": "FlowJersey SaaS platform development",
-        "description": "Building FlowJersey — multi-tenant SaaS platform for sports e-commerce with scalable architecture, payments and security."
       },
       "jweb-internship": {
         "title": "Internship at jweb",

@@ -54,7 +54,15 @@ export function FlowJerseyPreviewStrip({
         </div>
       </Link>
 
-      <div className="grid grid-cols-4 gap-1">
+      <div
+        className={cn(
+          "grid gap-1",
+          items.length <= 2 && "grid-cols-2",
+          items.length === 3 && "grid-cols-3",
+          items.length === 4 && "grid-cols-4",
+          items.length >= 5 && "grid-cols-5",
+        )}
+      >
         {items.map((item, i) => (
           <button
             key={item.key}

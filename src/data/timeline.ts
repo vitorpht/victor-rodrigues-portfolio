@@ -6,9 +6,6 @@ export type TimelineEntry = {
 
 export const timelineEntries: TimelineEntry[] = [
   { id: "fullstack-start", period: "2025" },
-  { id: "first-projects", period: "2025" },
-  { id: "desbravadores", period: "2025" },
-  { id: "flowjersey", period: "2026" },
   { id: "jweb-internship", period: "Setembro - Outubro/2026" },
   { id: "degree", period: "future", isFuture: true },
   { id: "cybersecurity", period: "future", isFuture: true },

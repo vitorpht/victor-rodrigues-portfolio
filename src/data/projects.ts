@@ -1,4 +1,4 @@
-export type ProjectId = "desbravadores" | "flowjersey";
+export type ProjectId = "desbravadores" | "dservices" | "flowjersey";
 
 export type ProjectStatus =
   | "featured"
@@ -29,6 +29,15 @@ export const DESBRAVADORES_TECHNOLOGIES = [
   "UI/UX Design",
 ] as const;
 
+export const DSERVICES_TECHNOLOGIES = [
+  "Next.js",
+  "TypeScript",
+  "React",
+  "Tailwind CSS",
+  "Responsive Design",
+  "SEO",
+] as const;
+
 export type ProjectEntry = {
   id: ProjectId;
   featured: boolean;
@@ -47,6 +56,14 @@ export const projects: ProjectEntry[] = [
     technologies: DESBRAVADORES_TECHNOLOGIES,
     hasDetailPage: true,
     demo: "https://desbravadoresnaestrada.com/",
+  },
+  {
+    id: "dservices",
+    featured: false,
+    status: "completed",
+    technologies: DSERVICES_TECHNOLOGIES,
+    hasDetailPage: true,
+    demo: "https://dservices.pt/",
   },
   {
     id: "flowjersey",
