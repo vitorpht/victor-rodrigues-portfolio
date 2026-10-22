@@ -36,6 +36,35 @@ export function readProfilePhotoBuffer(): { buffer: Buffer; mime: string } | und
   return { buffer: fs.readFileSync(asset.absolutePath), mime: asset.mime };
 }
 
+/** Largura servida no site: o quadro do herói tem no máximo 270px, 600px cobre ecrãs 2x. */
+const WEB_PHOTO_WIDTH = 600;
+
+let webPhotoCache: { key: string; buffer: Buffer } | undefined;
+
+/**
+ * Versão leve da foto para o site (WebP redimensionado). O PDF do CV continua a usar
+ * `readProfilePhotoBuffer`, que devolve o ficheiro original.
+ */
+export async function readWebProfilePhoto(): Promise<{ buffer: Buffer; mime: string } | undefined> {
+  const asset = resolveProfilePhotoAsset();
+  if (!asset) return undefined;
+
+  const key = `${asset.absolutePath}:${fs.statSync(asset.absolutePath).mtimeMs}`;
+  if (webPhotoCache?.key === key) return { buffer: webPhotoCache.buffer, mime: "image/webp" };
+
+  try {
+    const { default: sharp } = await import("sharp");
+    const buffer = await sharp(asset.absolutePath)
+      .resize({ width: WEB_PHOTO_WIDTH, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
+    webPhotoCache = { key, buffer };
+    return { buffer, mime: "image/webp" };
+  } catch {
+    return { buffer: fs.readFileSync(asset.absolutePath), mime: asset.mime };
+  }
+}
+
 export function getInitials(name: string): string {
   return name
     .split(/\s+/)

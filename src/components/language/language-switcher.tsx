@@ -52,6 +52,7 @@ export function LanguageSwitcher({ locale, dict }: LanguageSwitcherProps) {
           <Link
             key={loc}
             href={getLocalizedPath(loc)}
+            prefetch={false}
             role="option"
             aria-selected={loc === locale}
             className={cn(

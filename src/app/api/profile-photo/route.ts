@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readProfilePhotoBuffer } from "@/lib/profile-photo";
+import { readWebProfilePhoto } from "@/lib/profile-photo";
 
 function isSameOriginRequest(request: Request): boolean {
   const host = request.headers.get("host");
@@ -37,7 +37,7 @@ export async function GET(request: Request) {
     return new NextResponse(null, { status: 403 });
   }
 
-  const photo = readProfilePhotoBuffer();
+  const photo = await readWebProfilePhoto();
   if (!photo) {
     return new NextResponse(null, { status: 404 });
   }

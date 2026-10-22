@@ -72,6 +72,7 @@ export function Footer({ locale, dict }: FooterProps) {
               <Link
                 key={loc}
                 href={getLocalizedPath(loc)}
+                prefetch={false}
                 className={`inline-flex items-center gap-1.5 text-xs transition-colors hover:text-primary ${
                   loc === locale ? "font-medium text-primary" : "text-foreground-secondary"
                 }`}

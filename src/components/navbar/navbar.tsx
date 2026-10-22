@@ -44,7 +44,10 @@ export function Navbar({ locale, dict }: NavbarProps) {
         {dict.nav.skipToContent}
       </a>
 
-      <nav className="section-container flex h-16 items-center justify-between" aria-label="Main navigation">
+      <nav
+        className="section-container flex h-16 items-center justify-between"
+        aria-label="Main navigation"
+      >
         <NavbarBrand locale={locale} homeLabel={dict.nav.home} />
 
         <div className="hidden items-center gap-1 md:flex">
@@ -56,6 +59,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
               <Link
                 key={key}
                 href={href}
+                prefetch={key === "contact" ? false : undefined}
                 className={cn(
                   "rounded-md px-3 py-2 text-sm transition-colors",
                   isActive
@@ -95,6 +99,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                 <Link
                   key={key}
                   href={href}
+                  prefetch={key === "contact" ? false : undefined}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
                     "rounded-md px-3 py-3 text-sm transition-colors hover:bg-card hover:text-foreground",
