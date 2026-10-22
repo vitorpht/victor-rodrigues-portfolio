@@ -1,5 +1,5 @@
 import { Check, ExternalLink } from "lucide-react";
-import { FlowJerseyGallery } from "@/components/flowjersey/flowjersey-gallery";
+import { ProjectGallery } from "@/components/projects/project-gallery";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -69,7 +69,7 @@ export function DesbravadoresDetail({
           align="left"
           className="mb-4 !mx-0 !max-w-none !text-left"
         />
-        <FlowJerseyGallery
+        <ProjectGallery
           items={desbravadoresGallery.items}
           labels={galleryLabels}
           placeholderText={t.galleryPlaceholderItem}

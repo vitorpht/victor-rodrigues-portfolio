@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { DesbravadoresDetail } from "@/components/projects/desbravadores-detail";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { getDesbravadoresGalleryAssets } from "@/lib/desbravadores-screenshots";
@@ -22,6 +23,9 @@ export default async function DesbravadoresPage({ params }: PageProps) {
   const desbravadoresGallery = getDesbravadoresGalleryAssets();
 
   return (
-    <DesbravadoresDetail dict={dict} locale={locale} desbravadoresGallery={desbravadoresGallery} />
+    <>
+      <PageJsonLd page="desbravadores" locale={locale} dict={dict} />
+      <DesbravadoresDetail dict={dict} locale={locale} desbravadoresGallery={desbravadoresGallery} />
+    </>
   );
 }

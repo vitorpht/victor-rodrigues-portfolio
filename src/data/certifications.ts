@@ -77,6 +77,10 @@ export const certifications: CertificationEntry[] = sortCertificationsByStartDat
     endDate: "2026-06-27",
     grades: { finalProject: 100, projectDefense: 100 },
   },
+  {
+    id: "ise-c-computer-engineering",
+    status: "planned",
+  },
 ]);
 
 export type CertificationFilter = "all" | CertificationStatus;

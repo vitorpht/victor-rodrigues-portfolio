@@ -10,10 +10,9 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
-    id: "jweb-internship",
-    company: "jweb",
-    startDate: "2026-09-07",
-    endDate: "2026-10-29",
-    url: "https://jweb.pt/",
+    id: "paos-internship",
+    company: "PAOS",
+    startDate: "2026-10-12",
+    endDate: "2027-02-02",
   },
 ];

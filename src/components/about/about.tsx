@@ -12,7 +12,7 @@ export function About({ dict, locale }: SectionProps) {
 
   return (
     <PageSection labelledBy="about-title" compact centered className="bg-background-secondary/50">
-      <SectionHeader id="about-title" title={t.title} subtitle={t.subtitle} />
+      <SectionHeader id="about-title" as="h1" title={t.title} subtitle={t.subtitle} />
 
       <StaggerContainer className="mt-8 grid gap-5 sm:grid-cols-2" stagger={0.06}>
         {aboutKeys.map((key) => {

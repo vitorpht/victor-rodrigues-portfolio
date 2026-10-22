@@ -66,12 +66,3 @@ export function splitInHalf<T>(items: T[]): [T[], T[]] {
   const mid = Math.ceil(items.length / 2);
   return [items.slice(0, mid), items.slice(mid)];
 }
-
-/** Formata stats FlowJersey numa linha compacta (poupa altura vs grelha). */
-export function formatStatsInline(
-  stats: { value?: string; label: string }[],
-): string {
-  return stats
-    .map((s) => (s.value ? `${s.value} ${s.label}` : s.label))
-    .join("  ·  ");
-}

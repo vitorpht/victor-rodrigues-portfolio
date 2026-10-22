@@ -9,7 +9,6 @@ export type StatItem = {
 export const statsItems: StatItem[] = [
   { id: "technologies", value: countTechnologies(), suffix: "+" },
   { id: "languages", value: 3 },
-  { id: "saas", value: 1 },
   { id: "studyHours", value: 1000, suffix: "+" },
 ];
 

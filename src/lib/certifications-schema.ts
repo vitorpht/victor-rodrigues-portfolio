@@ -1,7 +1,7 @@
 import type { CertificationEntry } from "@/data/certifications";
 import type { Dictionary, Locale } from "@/lib/i18n";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://victorrodrigues.dev";
 
 export function generateCertificationsJsonLd(
   locale: Locale,
@@ -15,7 +15,7 @@ export function generateCertificationsJsonLd(
     "@type": "ItemList",
     name: t.title,
     description: t.subtitle,
-    url: `${BASE_URL}/${locale}/certifications`,
+    url: `${SITE_URL}/${locale}/certifications`,
     numberOfItems: entries.length,
     itemListElement: entries.map((entry, index) => {
       const item = t.items[entry.id as keyof typeof t.items];
@@ -39,7 +39,7 @@ export function generateCertificationsJsonLd(
       if (entry.credential?.url) {
         credential.url = entry.credential.url.startsWith("http")
           ? entry.credential.url
-          : `${BASE_URL}${entry.credential.url}`;
+          : `${SITE_URL}${entry.credential.url}`;
       }
 
       return {

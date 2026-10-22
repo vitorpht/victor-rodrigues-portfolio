@@ -10,7 +10,7 @@ export function Journey({ dict, locale }: SectionProps) {
 
   return (
     <PageSection labelledBy="journey-title" compact centered>
-      <SectionHeader id="journey-title" title={t.title} subtitle={t.subtitle} />
+      <SectionHeader id="journey-title" as="h1" title={t.title} subtitle={t.subtitle} />
 
       <StaggerContainer className="relative mx-auto mt-10 max-w-2xl" stagger={0.08}>
         <div className="absolute bottom-0 left-[11px] top-0 w-px bg-border sm:left-4" aria-hidden="true" />

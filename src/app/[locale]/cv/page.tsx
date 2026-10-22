@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { CvPageContent } from "@/components/cv/cv-page-content";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { buildCvData } from "@/lib/cv/build-cv-data";
@@ -23,6 +24,7 @@ export default async function CvPage({ params }: PageProps) {
 
   return (
     <div className="page-main section-padding">
+      <PageJsonLd page="cv" locale={locale} dict={dict} />
       <CvPageContent data={data} downloadLabel={dict.cv.download} />
     </div>
   );

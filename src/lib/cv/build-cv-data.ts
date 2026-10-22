@@ -17,24 +17,6 @@ export type CvSkillCard = { title: string; description: string };
 
 export type CvProfileCard = { id: string; label: string };
 
-export type CvStatItem = { value?: string; label: string; highlight?: boolean };
-
-export type CvTechStackGroup = { label: string; items: string[] };
-
-export type CvHighlightGroup = { label: string; items: string[] };
-
-export type CvMainProject = {
-  name: string;
-  badges: string[];
-  description: string[];
-  statsTitle: string;
-  stats: CvStatItem[];
-  highlightsLabel: string;
-  highlightGroups: CvHighlightGroup[];
-  metricsTitle: string;
-  technologyGroups: CvTechStackGroup[];
-};
-
 export type CvAcademicProject = {
   name: string;
   description: string;
@@ -76,7 +58,6 @@ export type CvData = {
   technicalProfileCards: CvProfileCard[];
   interests: string[];
   languages: CvLanguage[];
-  mainProject: CvMainProject;
   academicProjects: CvAcademicProject[];
   technologyGroups: CvTechnologyGroup[];
   educationCurrent: CvEducationItem[];
@@ -155,20 +136,6 @@ function mapCertification(
 
 export function buildCvData(locale: Locale, dict: Dictionary): CvData {
   const cv = dict.cv;
-  const mainCopy = cv.mainProject;
-
-  const mainProject: CvMainProject = {
-    name: mainCopy.name,
-    badges: mainCopy.badges,
-    description: mainCopy.description,
-    statsTitle: mainCopy.statsTitle,
-    stats: mainCopy.stats,
-    highlightsLabel: mainCopy.highlightsLabel,
-    highlightGroups: mainCopy.highlightGroups,
-    metricsTitle: mainCopy.metricsTitle,
-    technologyGroups: mainCopy.technologyGroups,
-  };
-
   const academicProjects: CvAcademicProject[] = CV_ACADEMIC_PROJECT_IDS.map((id) => {
     const copy = cv.academicProjects[id];
     return {
@@ -222,7 +189,6 @@ export function buildCvData(locale: Locale, dict: Dictionary): CvData {
       level: cv.languageLevels[lang.level],
       progress: LANGUAGE_PROGRESS[lang.level] ?? 70,
     })),
-    mainProject,
     academicProjects,
     technologyGroups: technologyCategoryOrder.map((category) => ({
       category,

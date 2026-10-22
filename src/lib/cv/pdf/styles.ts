@@ -180,56 +180,6 @@ export const pdfStyles = StyleSheet.create({
     lineHeight: 1.38,
   },
 
-  projectBlock: {
-    borderLeftWidth: 2,
-    borderLeftColor: PDF_COLOR.accent,
-    paddingLeft: 10,
-  },
-  projectName: {
-    fontFamily: PDF_FONT.bold,
-    fontSize: 10.5,
-    color: PDF_COLOR.text,
-    marginBottom: 3,
-  },
-  projectMeta: {
-    fontSize: PDF_TYPE.meta,
-    color: PDF_COLOR.textMuted,
-    marginBottom: 6,
-  },
-  projectHighlight: {
-    fontFamily: PDF_FONT.bold,
-    fontSize: PDF_TYPE.label,
-    textTransform: "uppercase",
-    letterSpacing: 0.3,
-    color: PDF_COLOR.textMuted,
-    marginTop: 8,
-    marginBottom: 5,
-  },
-  statsInline: {
-    fontSize: PDF_TYPE.bodySmall,
-    color: PDF_COLOR.textBody,
-    lineHeight: 1.4,
-  },
-  metricsList: {
-    marginTop: 2,
-  },
-  metricRow: {
-    flexDirection: "row",
-    marginBottom: 5,
-  },
-  metricLabel: {
-    fontFamily: PDF_FONT.bold,
-    fontSize: PDF_TYPE.meta,
-    color: PDF_COLOR.text,
-    width: "20%",
-  },
-  metricItems: {
-    fontSize: PDF_TYPE.bodySmall,
-    color: PDF_COLOR.textBody,
-    width: "80%",
-    lineHeight: 1.38,
-  },
-
   eduEntry: {
     marginBottom: 7,
   },

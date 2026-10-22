@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { Technologies } from "@/components/technologies/technologies";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default async function TechnologiesPage({ params }: PageProps) {
 
   return (
     <div className="page-main">
+      <PageJsonLd page="technologies" locale={locale} dict={dict} />
       <Technologies dict={dict} locale={locale} />
     </div>
   );

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { DservicesDetail } from "@/components/projects/dservices-detail";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { getDservicesGalleryAssets } from "@/lib/dservices-screenshots";
@@ -21,5 +22,10 @@ export default async function DservicesPage({ params }: PageProps) {
   const dict = await getDictionary(locale);
   const dservicesGallery = getDservicesGalleryAssets();
 
-  return <DservicesDetail dict={dict} locale={locale} dservicesGallery={dservicesGallery} />;
+  return (
+    <>
+      <PageJsonLd page="dservices" locale={locale} dict={dict} />
+      <DservicesDetail dict={dict} locale={locale} dservicesGallery={dservicesGallery} />
+    </>
+  );
 }

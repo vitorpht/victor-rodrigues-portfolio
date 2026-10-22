@@ -1,25 +1,24 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/lib/i18n";
+import { defaultLocale, locales } from "@/lib/i18n";
 import { pagePaths } from "@/lib/routes";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://victorrodrigues.dev";
+const HIGH_PRIORITY = new Set(["", "/projects", "/about"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  for (const locale of locales) {
-    for (const path of pagePaths) {
-      const url = `${BASE_URL}/${locale}${path}`;
+  for (const path of pagePaths) {
+    const languages: Record<string, string> = Object.fromEntries(
+      locales.map((loc) => [loc, `${SITE_URL}/${loc}${path}`]),
+    );
+    languages["x-default"] = `${SITE_URL}/${defaultLocale}${path}`;
+
+    for (const locale of locales) {
       entries.push({
-        url,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: path === "" && locale === "pt" ? 1 : 0.8,
-        alternates: {
-          languages: Object.fromEntries(
-            locales.map((loc) => [loc, `${BASE_URL}/${loc}${path}`]),
-          ),
-        },
+        url: `${SITE_URL}/${locale}${path}`,
+        priority: path === "" ? 1 : HIGH_PRIORITY.has(path) ? 0.9 : 0.7,
+        alternates: { languages },
       });
     }
   }

@@ -6,8 +6,6 @@ export type TimelineEntry = {
 
 export const timelineEntries: TimelineEntry[] = [
   { id: "fullstack-start", period: "2025" },
-  { id: "jweb-internship", period: "Setembro - Outubro/2026" },
+  { id: "paos-internship", period: "Outubro/2026 - Fevereiro/2027" },
   { id: "degree", period: "future", isFuture: true },
-  { id: "cybersecurity", period: "future", isFuture: true },
-  { id: "ai", period: "future", isFuture: true },
 ];

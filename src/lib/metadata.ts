@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import type { Dictionary, Locale } from "@/lib/i18n";
-import { getDictionary, isValidLocale, locales } from "@/lib/i18n";
+import { defaultLocale, getDictionary, isValidLocale, locales } from "@/lib/i18n";
+import { SITE_URL } from "@/lib/site";
 import { profile } from "@/data/profile";
+import { getProject, type ProjectId } from "@/data/projects";
 import { getAllTechnologyKeys } from "@/data/technologies";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://victorrodrigues.dev";
 const OG_IMAGE = "/opengraph-image";
+
+const OG_LOCALES: Record<Locale, string> = {
+  pt: "pt_PT",
+  en: "en_US",
+  es: "es_ES",
+};
 
 export type PageKey =
   | "home"
@@ -14,7 +21,6 @@ export type PageKey =
   | "technologies"
   | "certifications"
   | "projects"
-  | "flowjersey"
   | "desbravadores"
   | "dservices"
   | "journey"
@@ -28,13 +34,15 @@ const pagePaths: Record<PageKey, string> = {
   technologies: "/technologies",
   certifications: "/certifications",
   projects: "/projects",
-  flowjersey: "/flowjersey",
   desbravadores: "/desbravadores",
   dservices: "/dservices",
   journey: "/journey",
   contact: "/contact",
   cv: "/cv",
 };
+
+const PERSON_ID = `${SITE_URL}/#person`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export function getPagePath(page: PageKey): string {
   return pagePaths[page];
@@ -56,107 +64,199 @@ export function generatePageMetadata(
 ): Metadata {
   const seo = dict.seo[page];
   const path = pagePaths[page];
-  const url = `${BASE_URL}/${locale}${path}`;
+  const url = `${SITE_URL}/${locale}${path}`;
 
   const languages: Record<string, string> = {};
   locales.forEach((loc) => {
-    languages[loc] = `${BASE_URL}/${loc}${path}`;
+    languages[loc] = `${SITE_URL}/${loc}${path}`;
   });
+  languages["x-default"] = `${SITE_URL}/${defaultLocale}${path}`;
 
-  const ogLocale =
-    locale === "pt" ? "pt_PT" : locale === "es" ? "es_ES" : "en_US";
+  const alternateLocale = locales.filter((loc) => loc !== locale).map((loc) => OG_LOCALES[loc]);
+  const [firstName, ...rest] = profile.name.split(" ");
+  const isProfilePage = page === "home" || page === "about";
+
+  const openGraphBase = {
+    locale: OG_LOCALES[locale],
+    alternateLocale,
+    url,
+    title: seo.title,
+    description: seo.description,
+    siteName: profile.name,
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} — ${dict.hero.role}`,
+      },
+    ],
+  };
 
   return {
     title: seo.title,
     description: seo.description,
-    keywords: page === "home" ? dict.meta.keywords : undefined,
-    authors: [{ name: profile.name }],
+    keywords: dict.meta.keywords,
+    applicationName: profile.name,
+    authors: [{ name: profile.name, url: SITE_URL }],
     creator: profile.name,
-    metadataBase: new URL(BASE_URL),
+    publisher: profile.name,
+    category: "technology",
+    metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: url,
       languages,
     },
-    openGraph: {
-      type: "website",
-      locale: ogLocale,
-      url,
-      title: seo.title,
-      description: seo.description,
-      siteName: profile.name,
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: seo.title,
-        },
-      ],
-    },
+    openGraph: isProfilePage
+      ? { ...openGraphBase, type: "profile", firstName, lastName: rest.join(" ") }
+      : { ...openGraphBase, type: "website" },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
-      creator: "@victorrodrigues",
       images: [OG_IMAGE],
     },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
+    formatDetection: { telephone: false, email: false, address: false },
   };
 }
 
+/** Entidades partilhadas por todas as páginas: a pessoa e o website. */
 export function generateJsonLd(locale: Locale, dict: Dictionary) {
-  const url = `${BASE_URL}/${locale}`;
-
-  const entries: Record<string, unknown>[] = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: profile.name,
-      url,
-      jobTitle: dict.hero.role,
-      description: dict.meta.description,
-      sameAs: [profile.github, profile.linkedin],
-      knowsAbout: getAllTechnologyKeys().map((key) => dict.technologies.items[key].name),
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Victor Rodrigues Portfolio",
-      url: BASE_URL,
-      description: dict.meta.description,
-      inLanguage: locale,
-    },
-  ];
-
-  if (dict.desbravadoresProject?.overview) {
-    entries.push({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Desbravadores na Estrada",
-      description: dict.desbravadoresProject.overview,
-      author: {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
         "@type": "Person",
+        "@id": PERSON_ID,
         name: profile.name,
+        url: `${SITE_URL}/${locale}`,
+        jobTitle: dict.hero.role,
+        description: dict.meta.description,
+        address: { "@type": "PostalAddress", addressCountry: "PT" },
+        knowsLanguage: profile.languages.map((lang) => lang.id),
+        sameAs: [profile.github, profile.linkedin],
+        knowsAbout: getAllTechnologyKeys().map((key) => dict.technologies.items[key].name),
       },
-    });
+      {
+        "@type": "WebSite",
+        "@id": WEBSITE_ID,
+        name: `${profile.name} — ${dict.hero.role}`,
+        alternateName: profile.name,
+        url: SITE_URL,
+        inLanguage: locales.map((loc) => OG_LOCALES[loc].replace("_", "-")),
+        publisher: { "@id": PERSON_ID },
+        author: { "@id": PERSON_ID },
+      },
+    ],
+  };
+}
+
+const PROJECT_PAGE_IDS: Record<"desbravadores" | "dservices", ProjectId> = {
+  desbravadores: "desbravadores",
+  dservices: "dservices",
+};
+
+function projectCreativeWork(locale: Locale, dict: Dictionary, id: ProjectId) {
+  const meta = getProject(id);
+  const copy = dict.projects[id];
+  const overview =
+    id === "desbravadores" ? dict.desbravadoresProject.overview : dict.dservicesProject.overview;
+
+  return {
+    "@type": "CreativeWork",
+    "@id": `${SITE_URL}/${locale}/${id}#project`,
+    name: copy.name,
+    description: overview,
+    url: `${SITE_URL}/${locale}/${id}`,
+    sameAs: meta.demo,
+    keywords: meta.technologies.join(", "),
+    author: { "@id": PERSON_ID },
+    creator: { "@id": PERSON_ID },
+  };
+}
+
+function breadcrumbs(locale: Locale, dict: Dictionary, page: PageKey) {
+  const home = { name: dict.nav.home, url: `${SITE_URL}/${locale}` };
+  const trail: { name: string; url: string }[] = [home];
+
+  if (page === "desbravadores" || page === "dservices") {
+    trail.push({ name: dict.nav.projects, url: `${SITE_URL}/${locale}/projects` });
+    trail.push({ name: dict.projects[PROJECT_PAGE_IDS[page]].name, url: `${SITE_URL}/${locale}${pagePaths[page]}` });
+  } else if (page !== "home") {
+    const name = page === "cv" ? dict.cv.title : dict.nav[page];
+    trail.push({ name, url: `${SITE_URL}/${locale}${pagePaths[page]}` });
   }
 
-  if (dict.dservicesProject?.overview) {
-    entries.push({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "D.Services Limpezas",
-      url: "https://dservices.pt/",
-      description: dict.dservicesProject.overview,
-      author: {
-        "@type": "Person",
-        name: profile.name,
-      },
-    });
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+/** Entidades específicas de cada página (tipo de página, migalhas de pão, projetos). */
+export function generatePageJsonLd(locale: Locale, dict: Dictionary, page: PageKey) {
+  const seo = dict.seo[page];
+  const url = `${SITE_URL}/${locale}${pagePaths[page]}`;
+  const pageId = `${url}#webpage`;
+
+  const isProfilePage = page === "home" || page === "about" || page === "cv";
+  const isCollection = page === "projects";
+
+  const webPage: Record<string, unknown> = {
+    "@type": isProfilePage ? "ProfilePage" : isCollection ? "CollectionPage" : "WebPage",
+    "@id": pageId,
+    url,
+    name: seo.title,
+    description: seo.description,
+    inLanguage: OG_LOCALES[locale].replace("_", "-"),
+    isPartOf: { "@id": WEBSITE_ID },
+    breadcrumb: { "@id": `${url}#breadcrumb` },
+  };
+
+  const graph: Record<string, unknown>[] = [webPage];
+
+  if (isProfilePage) {
+    webPage.mainEntity = { "@id": PERSON_ID };
+  } else {
+    webPage.about = { "@id": PERSON_ID };
   }
 
-  return entries;
+  if (isCollection) {
+    const ids: ProjectId[] = ["desbravadores", "dservices"];
+    webPage.mainEntity = {
+      "@type": "ItemList",
+      numberOfItems: ids.length,
+      itemListElement: ids.map((id, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: projectCreativeWork(locale, dict, id),
+      })),
+    };
+  }
+
+  if (page === "desbravadores" || page === "dservices") {
+    const work = projectCreativeWork(locale, dict, PROJECT_PAGE_IDS[page]);
+    graph.push(work);
+    webPage.mainEntity = { "@id": work["@id"] };
+  }
+
+  graph.push({ ...breadcrumbs(locale, dict, page), "@id": `${url}#breadcrumb` });
+
+  return { "@context": "https://schema.org", "@graph": graph };
 }

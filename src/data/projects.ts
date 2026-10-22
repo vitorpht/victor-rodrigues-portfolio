@@ -1,4 +1,4 @@
-export type ProjectId = "desbravadores" | "dservices" | "flowjersey";
+export type ProjectId = "desbravadores" | "dservices";
 
 export type ProjectStatus =
   | "featured"
@@ -6,17 +6,6 @@ export type ProjectStatus =
   | "active"
   | "completed"
   | "coming_soon";
-
-/** Stack partilhada — única fonte para projetos, FlowJersey e CV */
-export const FLOWJERSEY_TECHNOLOGIES = [
-  "Next.js",
-  "TypeScript",
-  "PostgreSQL",
-  "Supabase",
-  "Stripe",
-  "Redis",
-  "Cloudflare",
-] as const;
 
 export const DESBRAVADORES_TECHNOLOGIES = [
   "WordPress",
@@ -64,14 +53,6 @@ export const projects: ProjectEntry[] = [
     technologies: DSERVICES_TECHNOLOGIES,
     hasDetailPage: true,
     demo: "https://dservices.pt/",
-  },
-  {
-    id: "flowjersey",
-    featured: false,
-    status: "in_development",
-    technologies: FLOWJERSEY_TECHNOLOGIES,
-    hasDetailPage: true,
-    demo: "https://flowjersey.com/",
   },
 ];
 

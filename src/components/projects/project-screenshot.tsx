@@ -8,7 +8,7 @@ type GalleryImageItem = {
   image: string;
 };
 
-type FlowJerseyScreenshotProps = {
+type ProjectScreenshotProps = {
   item: GalleryImageItem;
   title: string;
   available: boolean;
@@ -59,7 +59,7 @@ function ScreenshotPlaceholder({
   );
 }
 
-export function FlowJerseyScreenshot({
+export function ProjectScreenshot({
   item,
   title,
   available,
@@ -68,7 +68,7 @@ export function FlowJerseyScreenshot({
   eager,
   compact,
   className,
-}: FlowJerseyScreenshotProps) {
+}: ProjectScreenshotProps) {
   if (!available) {
     return (
       <ScreenshotPlaceholder

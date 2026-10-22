@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { FlowJerseyScreenshot } from "@/components/flowjersey/flowjersey-screenshot";
+import { ProjectScreenshot } from "@/components/projects/project-screenshot";
 import { cn } from "@/lib/utils";
 
 type GalleryItem = {
@@ -10,7 +10,7 @@ type GalleryItem = {
   image: string;
 };
 
-type FlowJerseyPreviewStripProps = {
+type ProjectPreviewStripProps = {
   items: GalleryItem[];
   labels: Record<string, string>;
   href: string;
@@ -20,7 +20,7 @@ type FlowJerseyPreviewStripProps = {
   className?: string;
 };
 
-export function FlowJerseyPreviewStrip({
+export function ProjectPreviewStrip({
   items,
   labels,
   href,
@@ -28,7 +28,7 @@ export function FlowJerseyPreviewStrip({
   screenshotsAvailable,
   placeholderText,
   className,
-}: FlowJerseyPreviewStripProps) {
+}: ProjectPreviewStripProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = items[activeIndex] ?? items[0];
 
@@ -42,7 +42,7 @@ export function FlowJerseyPreviewStrip({
         className="group block overflow-hidden rounded-lg border border-border/50 bg-background-secondary/30 transition-colors hover:border-primary/25"
       >
         <div className="relative aspect-[16/9] overflow-hidden">
-          <FlowJerseyScreenshot
+          <ProjectScreenshot
             key={active.key}
             item={active}
             title={labels[active.key]}
@@ -78,7 +78,7 @@ export function FlowJerseyPreviewStrip({
             aria-label={labels[item.key]}
             aria-current={i === activeIndex ? "true" : undefined}
           >
-            <FlowJerseyScreenshot
+            <ProjectScreenshot
               item={item}
               title={labels[item.key]}
               available={screenshotsAvailable}

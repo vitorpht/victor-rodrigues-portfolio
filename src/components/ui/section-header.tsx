@@ -8,6 +8,8 @@ type SectionHeaderProps = {
   subtitle?: string;
   className?: string;
   align?: "center" | "left";
+  /** Nível do título; usar "h1" no cabeçalho principal de cada página. */
+  as?: "h1" | "h2";
 };
 
 export function SectionHeader({
@@ -16,12 +18,13 @@ export function SectionHeader({
   subtitle,
   className,
   align = "center",
+  as: Heading = "h2",
 }: SectionHeaderProps) {
   return (
     <ScrollReveal className={cn(align === "center" && "mx-auto max-w-2xl text-center", className)}>
-      <h2 id={id} className="text-2xl font-bold tracking-tight sm:text-3xl">
+      <Heading id={id} className="text-2xl font-bold tracking-tight sm:text-3xl">
         {title}
-      </h2>
+      </Heading>
       {subtitle && <p className="mt-3 text-sm text-foreground-secondary sm:text-base">{subtitle}</p>}
     </ScrollReveal>
   );

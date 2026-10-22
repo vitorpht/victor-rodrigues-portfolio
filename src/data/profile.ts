@@ -25,7 +25,7 @@ export const profile = {
     { id: "en", level: "advanced" },
     { id: "es", level: "advanced" },
   ] satisfies ProfileLanguage[],
-  interests: ["saas", "security", "architecture", "ai", "cloud", "postgresql", "cybersecurity", "webdev"] as const,
+  interests: ["security", "architecture", "ai", "cloud", "postgresql", "cybersecurity", "webdev"] as const,
 } as const;
 
 export type ProfileInterest = (typeof profile.interests)[number];

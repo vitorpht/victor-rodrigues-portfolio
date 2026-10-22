@@ -1,37 +1,33 @@
 {
   "meta": {
-    "title": "Victor Rodrigues | Full-Stack Developer",
-    "description": "Professional portfolio of Victor Rodrigues — Full-Stack Developer specialized in Next.js, TypeScript, PostgreSQL, SaaS architecture and security.",
-    "keywords": "Victor Rodrigues, Full-Stack Developer, Next.js, TypeScript, PostgreSQL, Supabase, SaaS, Portfolio"
+    "title": "Victor Rodrigues | Full-Stack Developer in Portugal",
+    "description": "Victor Rodrigues, Junior Full-Stack Developer in Portugal. Websites and web apps built with HTML, CSS, JavaScript, React, Java, C# and PostgreSQL.",
+    "keywords": "Victor Rodrigues, Full-Stack Developer, Web Developer, Junior Developer, Portugal, HTML, CSS, JavaScript, React, Java, C#, PostgreSQL, Next.js, WordPress, Portfolio, Resume"
   },
   "seo": {
     "home": {
-      "title": "Victor Rodrigues | Full-Stack Developer",
-      "description": "Professional portfolio of Victor Rodrigues — Full-Stack Developer specialized in Next.js, TypeScript, PostgreSQL and SaaS platforms."
+      "title": "Victor Rodrigues | Full-Stack Developer in Portugal",
+      "description": "Victor Rodrigues, Junior Full-Stack Developer in Portugal. Websites and web apps built with HTML, CSS, JavaScript, React, Java, C# and PostgreSQL."
     },
     "about": {
-      "title": "About Me | Victor Rodrigues",
-      "description": "Meet Victor Rodrigues — background, training, main technologies and professional goals in Full-Stack development."
+      "title": "About Victor Rodrigues | Junior Full-Stack Developer",
+      "description": "Meet Victor Rodrigues: training, internship, main technologies (HTML, CSS, JavaScript, React, Java, C# and PostgreSQL) and goals in Full-Stack development."
     },
     "highlights": {
       "title": "Technical Highlights | Victor Rodrigues",
-      "description": "Technical skills demonstrated in real projects: SaaS, multi-tenancy, PostgreSQL, Supabase, Stripe and security."
+      "description": "Technical skills of Victor Rodrigues: PostgreSQL, Supabase, rate limiting, Cloudflare, CI/CD and multilingual websites with international SEO."
     },
     "technologies": {
-      "title": "Technologies | Victor Rodrigues",
-      "description": "Victor Rodrigues tech stack — frontend, backend, databases, security and cloud infrastructure."
+      "title": "Technologies and Tech Stack | Victor Rodrigues",
+      "description": "Victor Rodrigues tech stack: HTML, CSS, JavaScript, React, Java, C#, PostgreSQL, Next.js and WordPress, plus security, cloud and development tools."
     },
     "certifications": {
-      "title": "Certifications | Victor Rodrigues",
+      "title": "Certifications and Training | Victor Rodrigues",
       "description": "Technical training and certifications of Victor Rodrigues in Full-Stack development, Java and computer engineering."
     },
     "projects": {
-      "title": "Projects | Victor Rodrigues",
-      "description": "Projects by Victor Rodrigues — D.Services Limpezas, Desbravadores na Estrada, FlowJersey SaaS, Java projects and modern software development."
-    },
-    "flowjersey": {
-      "title": "FlowJersey | Victor Rodrigues",
-      "description": "FlowJersey — multi-tenant SaaS platform for sports e-commerce. Architecture, technologies and gallery."
+      "title": "Web Projects | Victor Rodrigues",
+      "description": "Projects by Victor Rodrigues: D.Services Limpezas (Next.js), Desbravadores na Estrada (WordPress) and Java projects. Fast, responsive, SEO-friendly websites."
     },
     "desbravadores": {
       "title": "Desbravadores na Estrada | Victor Rodrigues",
@@ -42,16 +38,16 @@
       "description": "D.Services Limpezas — Next.js corporate website for a cleaning company in Figueira da Foz. Design, SEO and gallery."
     },
     "journey": {
-      "title": "Journey | Victor Rodrigues",
-      "description": "Professional and academic journey of Victor Rodrigues — training, projects and future goals."
+      "title": "Professional and Academic Journey | Victor Rodrigues",
+      "description": "Journey of Victor Rodrigues: Full-Stack training, curricular internship at PAOS and future goals in Computer Engineering."
     },
     "contact": {
       "title": "Contact | Victor Rodrigues",
-      "description": "Get in touch with Victor Rodrigues for collaborations, web projects and SaaS platforms."
+      "description": "Contact Victor Rodrigues, Full-Stack Developer in Portugal, for websites, web applications and software project collaborations."
     },
     "cv": {
-      "title": "Victor Rodrigues | Resume",
-      "description": "Resume of Victor Rodrigues — Full-Stack Developer. Skills, projects, education and certifications."
+      "title": "Resume | Victor Rodrigues, Full-Stack Developer",
+      "description": "Resume of Victor Rodrigues, Full-Stack Developer: skills in HTML, CSS, JavaScript, React, Java, C# and PostgreSQL, projects, education and certifications."
     }
   },
   "nav": {
@@ -91,11 +87,11 @@
     },
     "studies": {
       "title": "What I study",
-      "description": "I'm currently deepening my knowledge in Full-Stack development, software architecture, application security and SaaS platforms. I combine technical training, continuous learning and hands-on project development to keep growing as a professional."
+      "description": "I'm currently deepening my knowledge in Full-Stack development, software architecture, application security and databases. I combine technical training, continuous learning and hands-on project development to keep growing as a professional."
     },
     "mainTech": {
       "title": "Main technologies",
-      "description": "I primarily work with Next.js, React, TypeScript, PostgreSQL and Supabase, building modern applications focused on performance, security and scalability. I complement these skills with knowledge of APIs, authentication, databases and cloud infrastructure."
+      "description": "I primarily work with HTML, CSS, JavaScript, C#, Java, React and PostgreSQL, building modern applications focused on performance, security and scalability. I complement these skills with knowledge of APIs, authentication, databases and cloud infrastructure."
     },
     "goals": {
       "title": "Professional goals",
@@ -107,70 +103,13 @@
     "title": "Technical Highlights",
     "subtitle": "Skills demonstrated in real, production-grade projects.",
     "items": {
-      "saas": { "title": "SaaS Development", "description": "Multi-tenant platforms with subscriptions, plans and user management." },
-      "multiTenant": { "title": "Multi-Tenant Architecture", "description": "Data isolation and segregated logic per tenant with horizontal scalability." },
       "postgresql": { "title": "PostgreSQL", "description": "Relational modeling, optimized queries and migrations in production." },
       "supabase": { "title": "Supabase", "description": "Authentication, real-time APIs and managed PostgreSQL data layer." },
-      "rls": { "title": "RLS Security", "description": "Row Level Security for strict data isolation between tenants." },
-      "stripe": { "title": "Stripe Connect", "description": "Payments, subscriptions and revenue sharing between platform and merchants." },
       "rateLimiting": { "title": "Rate Limiting", "description": "API protection against abuse with request rate control." },
       "cloudflare": { "title": "Cloudflare", "description": "CDN, DDoS protection and global content delivery optimization." },
       "cicd": { "title": "CI/CD", "description": "Automated pipelines for continuous deployment and code quality." },
       "i18n": { "title": "Internationalization", "description": "Multi-language websites with international SEO and hreflang." }
     }
-  },
-  "featuredProject": {
-    "title": "Featured Project",
-    "name": "FlowJersey",
-    "subtitle": "Multi-Tenant SaaS Platform",
-    "problem": "Sports jersey retailers need a simple and secure way to create online stores without investing in complex technical infrastructure.",
-    "solution": "FlowJersey is a multi-tenant SaaS platform that lets each merchant create their online store on shared infrastructure, with product, order, customer and plan management in a single dashboard.",
-    "audience": "Entrepreneurs and sports retailers who want to sell online professionally and at scale.",
-    "why": "Built to apply SaaS architecture, multi-tenancy, RLS security and real payment integrations in practice.",
-    "problemLabel": "Problem",
-    "solutionLabel": "Solution",
-    "audienceLabel": "Audience",
-    "whyLabel": "Why",
-    "technologiesTitle": "Technologies",
-    "featuresTitle": "Features",
-    "challengesTitle": "Technical Challenges",
-    "galleryTitle": "Gallery",
-    "galleryPlaceholder": {
-      "badge": "In development",
-      "title": "Gallery coming soon",
-      "description": "FlowJersey is under active development. A gallery with interface screenshots — dashboard, management area and public pages — will be published once the platform reaches a stable visual stage suitable for demonstration."
-    },
-    "features": [
-      "Multi-Tenant",
-      "Dashboard",
-      "Product Management",
-      "Customer Management",
-      "Order Management",
-      "Plan System",
-      "Stripe Connect",
-      "RLS Security",
-      "Rate Limiting",
-      "Authentication"
-    ],
-    "challenges": {
-      "multiTenancy": { "title": "Multi-Tenancy", "description": "Tenant-isolated architecture with segregated data and horizontal scalability." },
-      "security": { "title": "Security", "description": "Authentication, authorization and rigorous protection of sensitive data." },
-      "stripe": { "title": "Stripe", "description": "Payment integration, subscriptions and Stripe Connect for merchants." },
-      "rateLimiting": { "title": "Rate Limiting", "description": "Abuse protection with request rate control via Redis." },
-      "performance": { "title": "Performance", "description": "Query optimization, caching and rendering for fast responses." },
-      "scalability": { "title": "Scalability", "description": "Infrastructure prepared for growth with Vercel and Cloudflare." }
-    },
-    "gallery": {
-      "dashboard": "Dashboard",
-      "products": "Product Management",
-      "orders": "Order Management",
-      "customers": "Customer Management",
-      "store": "Store Page",
-      "checkout": "Checkout",
-      "plans": "Plans",
-      "admin": "Administration"
-    },
-    "galleryPlaceholderItem": "Screenshot coming soon"
   },
   "desbravadoresProject": {
     "title": "Featured Project",
@@ -409,9 +348,8 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Real client projects and products in development.",
+    "subtitle": "Real projects built for clients.",
     "featured": "Featured Project",
-    "saasBadge": "SaaS",
     "wordpressBadge": "WordPress",
     "nextjsBadge": "Next.js",
     "inDevelopment": "In Development",
@@ -423,15 +361,8 @@
     "githubLabel": "GitHub",
     "demoLabel": "Demo",
     "websiteLabel": "Visit Website",
-    "previewAriaLabel": "View FlowJersey gallery — open screenshots",
     "desbravadoresPreviewAriaLabel": "View Desbravadores na Estrada gallery — open screenshots",
     "dservicesPreviewAriaLabel": "View D.Services Limpezas gallery — open screenshots",
-    "flowjersey": {
-      "name": "FlowJersey",
-      "tagline": "Multi-Tenant SaaS Platform",
-      "description": "Multi-tenant SaaS platform for creating and managing online sports jersey stores, with subscriptions, payments and per-merchant data isolation.",
-      "highlights": ["Multi-Tenant Architecture", "Stripe Connect", "RLS Security", "Rate Limiting", "Admin Dashboard"]
-    },
     "desbravadores": {
       "name": "Desbravadores na Estrada",
       "tagline": "Travel Blog · Client Project",
@@ -461,22 +392,14 @@
         "title": "Started Full-Stack training",
         "description": "Began technical training in modern web development, focusing on JavaScript, React and software engineering best practices."
       },
-      "jweb-internship": {
-        "title": "Internship at jweb",
-        "period": "September - October/2026",
-        "description": "Professional internship at Jweb, completed between 7 September and 29 October 2026, totaling 300 hours. Hands-on experience in a professional environment, supervised by internship mentor José Oliveira."
+      "paos-internship": {
+        "title": "Curricular internship at PAOS",
+        "period": "October/2026 - February/2027",
+        "description": "Curricular internship at PAOS, starting on 12 October 2026 and expected to finish on 2 February 2027. Hands-on experience in a professional environment, as part of the course."
       },
       "degree": {
         "title": "Computer Engineering degree",
         "description": "Planned enrollment in a Computer Engineering degree at ISEC Coimbra, deepening software engineering and systems fundamentals."
-      },
-      "cybersecurity": {
-        "title": "Cybersecurity specialization",
-        "description": "Planned advanced training in application security, data protection and web defense practices."
-      },
-      "ai": {
-        "title": "Artificial Intelligence specialization",
-        "description": "Planned deepening in AI applied to software development and intelligent systems."
       }
     }
   },
@@ -486,13 +409,12 @@
     "items": {
       "technologies": { "label": "Technologies" },
       "languages": { "label": "Languages" },
-      "saas": { "label": "SaaS in development" },
       "studyHours": { "label": "Study hours" }
     }
   },
   "cta": {
     "title": "Let's build something together?",
-    "description": "I'm available to collaborate on web projects, SaaS platforms and modern solutions for businesses and entrepreneurs.",
+    "description": "I'm available to collaborate on web projects, web applications and modern solutions for businesses and entrepreneurs.",
     "button": "Get in Touch"
   },
   "contact": {
@@ -532,15 +454,14 @@
     "title": "Resume",
     "download": "Download CV",
     "jobTitle": "Full-Stack Developer",
-    "heroTagline": "Specialized in modern web applications, SaaS platforms and scalable architecture.",
+    "heroTagline": "Specialized in modern websites and web applications, focused on performance and security.",
     "summary": [
-      "Full-Stack Developer focused on building modern web applications, client websites and SaaS platforms.",
-      "I built Desbravadores na Estrada, a WordPress website delivered to a real client, with Elementor Pro, mobile-first design and performance optimization.",
-      "In parallel I am building FlowJersey, a multi-tenant SaaS platform with Next.js, TypeScript and PostgreSQL."
+      "Full-Stack Developer focused on building modern web applications and client websites.",
+      "I built Desbravadores na Estrada, a WordPress website delivered to a real client, with Elementor Pro, mobile-first design and performance optimization."
     ],
     "objectiveHighlight": "Continue growing as a Full-Stack Developer through building real products and deepening knowledge in Software Architecture, Cybersecurity and Artificial Intelligence.",
     "keySkillCards": [
-      { "title": "SaaS Architecture", "description": "Building scalable multi-tenant platforms." },
+      { "title": "Java & C#", "description": "Object-oriented programming and data structures." },
       { "title": "Application Security", "description": "Authentication, RLS, rate limiting and API protection." },
       { "title": "PostgreSQL", "description": "Relational modeling and query optimization." },
       { "title": "Cloud Infrastructure", "description": "Deploy, CDN, DNS and protection via Cloudflare." },
@@ -552,12 +473,10 @@
       { "id": "frontend", "label": "Modern Frontend" },
       { "id": "backend", "label": "Backend" },
       { "id": "database", "label": "Databases" },
-      { "id": "saas", "label": "SaaS Architecture" },
       { "id": "security", "label": "Security" },
       { "id": "cloud", "label": "Cloud Infrastructure" }
     ],
     "interestTags": [
-      "SaaS",
       "Architecture",
       "Security",
       "Cloud",
@@ -572,40 +491,6 @@
       "linkedin": "LinkedIn",
       "email": "Email",
       "location": "Location"
-    },
-    "mainProject": {
-      "name": "Desbravadores na Estrada",
-      "badges": ["Featured Project", "WordPress", "Real Client", "Completed"],
-      "description": [
-        "Website built for a real client — a travel blog with intuitive navigation and content organized by destinations.",
-        "Built with WordPress and Elementor Pro, using a mobile-first approach, custom templates and simplified content management.",
-        "Focused on performance, user experience and a clean, consistent visual identity across all devices."
-      ],
-      "statsTitle": "Desbravadores Highlights",
-      "stats": [
-        { "label": "Client Project", "highlight": true },
-        { "label": "Mobile First", "highlight": true },
-        { "label": "Elementor Theme Builder", "highlight": true },
-        { "label": "Responsive Design", "highlight": true },
-        { "label": "Custom Templates", "highlight": true },
-        { "label": "Basic SEO", "highlight": true },
-        { "label": "Performance Optimization", "highlight": true },
-        { "label": "WordPress Management", "highlight": true }
-      ],
-      "highlightsLabel": "Technical Highlights",
-      "highlightGroups": [
-        { "label": "Experience", "items": ["Mobile First", "UI/UX", "Responsive Design"] },
-        { "label": "WordPress", "items": ["Elementor Pro", "Theme Builder", "Custom templates"] },
-        { "label": "Content", "items": ["Travel categories", "Articles", "Automatic translation"] },
-        { "label": "Quality", "items": ["Performance", "Basic SEO", "Simplified management"] }
-      ],
-      "metricsTitle": "Technical Stack",
-      "technologyGroups": [
-        { "label": "CMS", "items": ["WordPress", "Elementor Pro"] },
-        { "label": "Frontend", "items": ["HTML5", "CSS3", "JavaScript"] },
-        { "label": "Backend", "items": ["PHP"] },
-        { "label": "Design", "items": ["Responsive Design", "UI/UX Design", "Design System"] }
-      ]
     },
     "academicProjects": {
       "java": {
@@ -634,7 +519,6 @@
       "summary": "Professional Summary",
       "objectives": "Career Objective",
       "keySkills": "Key Skills",
-      "mainProject": "Featured Project",
       "academicProjects": "Academic Projects",
       "technicalProfile": "Technical Profile",
       "skills": "Technical Skills",
@@ -670,7 +554,6 @@
       "es": "Spanish"
     },
     "interests": {
-      "saas": "SaaS",
       "security": "Security",
       "architecture": "Architecture",
       "ai": "Artificial Intelligence",
@@ -693,9 +576,9 @@
       "ai-specialization": { "title": "Artificial Intelligence" }
     },
     "experienceItems": {
-      "jweb-internship": {
-        "title": "Internship — jweb",
-        "description": "Professional internship at Jweb, completed between 7 September and 29 October 2026, totaling 300 hours. Hands-on experience in a professional environment, supervised by internship mentor José Oliveira."
+      "paos-internship": {
+        "title": "Curricular internship — PAOS",
+        "description": "Curricular internship at PAOS, starting on 12 October 2026 and expected to finish on 2 February 2027. Hands-on experience in a professional environment, as part of the course."
       }
     }
   },

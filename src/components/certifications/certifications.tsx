@@ -69,7 +69,7 @@ export function Certifications({ dict, locale }: SectionProps) {
 
   return (
     <PageSection labelledBy="certifications-title" compact className="bg-background-secondary/40">
-      <SectionHeader id="certifications-title" title={t.title} subtitle={t.subtitle} />
+      <SectionHeader id="certifications-title" as="h1" title={t.title} subtitle={t.subtitle} />
 
       <StaggerContainer className="mt-8 grid gap-3 sm:grid-cols-3" stagger={0.06}>
         <StaggerItem>
@@ -376,17 +376,19 @@ function CertificationCard({
             </CardDescription>
           )}
 
-          <button
-            type="button"
-            onClick={onView}
-            className={cn(
-              buttonVariants({ variant: "outline", size: "sm" }),
-              "mt-auto w-full transition-all duration-200 hover:scale-[1.02] hover:border-primary/40 hover:shadow-sm hover:shadow-primary/5",
-            )}
-          >
-            <ExternalLink className="h-4 w-4" />
-            {viewLabel}
-          </button>
+          {entry.status !== "planned" && (
+            <button
+              type="button"
+              onClick={onView}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "mt-auto w-full transition-all duration-200 hover:scale-[1.02] hover:border-primary/40 hover:shadow-sm hover:shadow-primary/5",
+              )}
+            >
+              <ExternalLink className="h-4 w-4" />
+              {viewLabel}
+            </button>
+          )}
         </CardContent>
       </div>
     </Card>

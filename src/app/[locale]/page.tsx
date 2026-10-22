@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { Hero } from "@/components/hero/hero";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <div className="page-main grid min-h-[calc(100dvh-7.5rem)] flex-1 place-content-center overflow-hidden">
+      <PageJsonLd page="home" locale={locale} dict={dict} />
       <Hero dict={dict} locale={locale} />
     </div>
   );

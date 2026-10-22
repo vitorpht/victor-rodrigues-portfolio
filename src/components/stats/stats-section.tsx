@@ -40,7 +40,7 @@ export function StatsSection({ dict, embedded = false, inline = false }: StatsSe
   const isInline = inline || embedded;
 
   const grid = (
-    <div className={cn("grid grid-cols-2 gap-2.5 lg:grid-cols-4", isInline ? "mt-2.5" : "mt-8")}>
+    <div className={cn("grid grid-cols-1 gap-2.5 sm:grid-cols-3", isInline ? "mt-2.5" : "mt-8")}>
       {statsItems.map((item, i) => {
         const copy = t.items[item.id as keyof typeof t.items];
         return (

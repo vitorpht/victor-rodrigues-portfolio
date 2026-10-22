@@ -54,7 +54,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.4,
           }}
         >
-          Next.js · TypeScript · PostgreSQL · SaaS
+          HTML · CSS · JavaScript · React · Java · C# · PostgreSQL
         </div>
         <div
           style={{

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { Contact } from "@/components/contact/contact";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default async function ContactPage({ params }: PageProps) {
 
   return (
     <div className="page-main flex min-h-0 flex-1 flex-col">
+      <PageJsonLd page="contact" locale={locale} dict={dict} />
       <Contact dict={dict} locale={locale} />
     </div>
   );

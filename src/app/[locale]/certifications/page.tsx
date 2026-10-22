@@ -1,5 +1,6 @@
-import Script from "next/script";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/seo/json-ld";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { Certifications } from "@/components/certifications/certifications";
 import { certifications } from "@/data/certifications";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
@@ -25,12 +26,8 @@ export default async function CertificationsPage({ params }: PageProps) {
 
   return (
     <>
-      <Script
-        id={`certifications-schema-${locale}`}
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
+      <PageJsonLd page="certifications" locale={locale} dict={dict} />
       <div className="page-main">
         <Certifications dict={dict} locale={locale} />
       </div>

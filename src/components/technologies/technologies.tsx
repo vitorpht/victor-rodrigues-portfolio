@@ -128,7 +128,7 @@ export function Technologies({ dict }: SectionProps) {
 
   return (
     <PageSection labelledBy="technologies-title" compact centered>
-      <SectionHeader id="technologies-title" title={t.title} subtitle={t.subtitle} />
+      <SectionHeader id="technologies-title" as="h1" title={t.title} subtitle={t.subtitle} />
 
       <ScrollReveal className="mx-auto mt-8 max-w-3xl">
         <div className="space-y-3" role="list" aria-label={t.title}>

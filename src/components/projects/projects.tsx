@@ -6,10 +6,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageSection, SectionHeader } from "@/components/ui/section-header";
 import { StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
-import { FlowJerseyPreviewStrip } from "@/components/projects/flowjersey-preview-strip";
+import { ProjectPreviewStrip } from "@/components/projects/project-preview-strip";
 import type { DesbravadoresGalleryItem, DesbravadoresGalleryKey } from "@/data/desbravadores-gallery";
 import type { DservicesGalleryItem, DservicesGalleryKey } from "@/data/dservices-gallery";
-import type { FlowJerseyGalleryItem, FlowJerseyGalleryKey } from "@/data/flowjersey-gallery";
 import { getProject, projectIds, type ProjectId, type ProjectStatus } from "@/data/projects";
 import { cn } from "@/lib/utils";
 import { routes } from "@/lib/routes";
@@ -49,12 +48,10 @@ function TypeBadge({
 }) {
   if (id === "desbravadores") return <Badge>{t.wordpressBadge}</Badge>;
   if (id === "dservices") return <Badge>{t.nextjsBadge}</Badge>;
-  if (id === "flowjersey") return <Badge>{t.saasBadge}</Badge>;
   return null;
 }
 
 function getDetailHref(id: ProjectId, locale: Locale): string | null {
-  if (id === "flowjersey") return routes.flowjersey(locale);
   if (id === "desbravadores") return routes.desbravadores(locale);
   if (id === "dservices") return routes.dservices(locale);
   return null;
@@ -63,16 +60,13 @@ function getDetailHref(id: ProjectId, locale: Locale): string | null {
 export function Projects({
   dict,
   locale,
-  flowjerseyGallery,
   desbravadoresGallery,
   dservicesGallery,
 }: SectionProps & {
-  flowjerseyGallery: { available: boolean; items: FlowJerseyGalleryItem[] };
   desbravadoresGallery: { available: boolean; items: DesbravadoresGalleryItem[] };
   dservicesGallery: { available: boolean; items: DservicesGalleryItem[] };
 }) {
   const t = dict.projects;
-  const flowjerseyLabels = dict.featuredProject.gallery as Record<FlowJerseyGalleryKey, string>;
   const desbravadoresLabels = dict.desbravadoresProject.gallery as Record<
     DesbravadoresGalleryKey,
     string
@@ -81,32 +75,28 @@ export function Projects({
   const dservicesLabels = (dservicesProject?.gallery ?? {}) as Record<DservicesGalleryKey, string>;
 
   const galleries: Partial<Record<ProjectId, GalleryAssets>> = {
-    flowjersey: flowjerseyGallery,
     desbravadores: desbravadoresGallery,
     dservices: dservicesGallery,
   };
 
   const galleryLabels: Partial<Record<ProjectId, Record<string, string>>> = {
-    flowjersey: flowjerseyLabels,
     desbravadores: desbravadoresLabels,
     dservices: dservicesLabels,
   };
 
   const placeholderTexts: Partial<Record<ProjectId, string>> = {
-    flowjersey: dict.featuredProject.galleryPlaceholderItem,
     desbravadores: dict.desbravadoresProject.galleryPlaceholderItem,
     dservices: dservicesProject?.galleryPlaceholderItem ?? "",
   };
 
   const previewAriaLabels: Partial<Record<ProjectId, string>> = {
-    flowjersey: t.previewAriaLabel,
     desbravadores: t.desbravadoresPreviewAriaLabel,
     dservices: t.dservicesPreviewAriaLabel,
   };
 
   return (
     <PageSection labelledBy="projects-title" compact centered className="bg-background-secondary/50">
-      <SectionHeader id="projects-title" title={t.title} subtitle={t.subtitle} />
+      <SectionHeader id="projects-title" as="h1" title={t.title} subtitle={t.subtitle} />
 
       <StaggerContainer className="mt-8 flex flex-col gap-6" stagger={0.07}>
         {projectIds.map((key) => {
@@ -168,7 +158,7 @@ export function Projects({
 
                 <CardContent className="flex flex-col justify-between gap-4 border-t border-border p-6 sm:p-7 lg:max-w-md lg:border-l lg:border-t-0">
                   {gallery && labels && detailHref && (
-                    <FlowJerseyPreviewStrip
+                    <ProjectPreviewStrip
                       items={gallery.items}
                       labels={labels}
                       href={detailHref}
@@ -222,7 +212,7 @@ export function Projects({
                         className={buttonVariants({ variant: "outline", size: "sm" })}
                       >
                         <ExternalLink className="h-4 w-4" />
-                        {key === "desbravadores" || key === "dservices" || key === "flowjersey"
+                        {key === "desbravadores" || key === "dservices"
                           ? t.websiteLabel
                           : t.demoLabel}
                       </a>

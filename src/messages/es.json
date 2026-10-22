@@ -1,37 +1,33 @@
 {
   "meta": {
-    "title": "Victor Rodrigues | Desarrollador Full-Stack",
-    "description": "Portafolio profesional de Victor Rodrigues — Desarrollador Full-Stack especializado en Next.js, TypeScript, PostgreSQL, arquitectura SaaS y seguridad.",
-    "keywords": "Victor Rodrigues, Desarrollador Full-Stack, Next.js, TypeScript, PostgreSQL, Supabase, SaaS, Portafolio"
+    "title": "Victor Rodrigues | Desarrollador Full-Stack en Portugal",
+    "description": "Victor Rodrigues, Desarrollador Full-Stack Junior en Portugal. Sitios y aplicaciones web con HTML, CSS, JavaScript, React, Java, C# y PostgreSQL.",
+    "keywords": "Victor Rodrigues, Desarrollador Full-Stack, Programador Full-Stack, Desarrollador Web, Desarrollador Junior, Portugal, HTML, CSS, JavaScript, React, Java, C#, PostgreSQL, Next.js, WordPress, Portafolio, Currículum"
   },
   "seo": {
     "home": {
-      "title": "Victor Rodrigues | Desarrollador Full-Stack",
-      "description": "Portafolio profesional de Victor Rodrigues — Desarrollador Full-Stack especializado en Next.js, TypeScript, PostgreSQL y plataformas SaaS."
+      "title": "Victor Rodrigues | Desarrollador Full-Stack en Portugal",
+      "description": "Victor Rodrigues, Desarrollador Full-Stack Junior en Portugal. Sitios y aplicaciones web con HTML, CSS, JavaScript, React, Java, C# y PostgreSQL."
     },
     "about": {
-      "title": "Sobre Mí | Victor Rodrigues",
-      "description": "Conoce a Victor Rodrigues — trayectoria, formación, tecnologías principales y objetivos profesionales en desarrollo Full-Stack."
+      "title": "Sobre Victor Rodrigues | Desarrollador Full-Stack Junior",
+      "description": "Conoce a Victor Rodrigues: formación, prácticas, tecnologías principales (HTML, CSS, JavaScript, React, Java, C# y PostgreSQL) y objetivos en desarrollo Full-Stack."
     },
     "highlights": {
       "title": "Destacados Técnicos | Victor Rodrigues",
-      "description": "Competencias técnicas demostradas en proyectos reales: SaaS, multi-tenancy, PostgreSQL, Supabase, Stripe y seguridad."
+      "description": "Competencias técnicas de Victor Rodrigues: PostgreSQL, Supabase, rate limiting, Cloudflare, CI/CD y sitios web multi-idioma con SEO internacional."
     },
     "technologies": {
-      "title": "Tecnologías | Victor Rodrigues",
-      "description": "Stack tecnológico de Victor Rodrigues — frontend, backend, bases de datos, seguridad e infraestructura cloud."
+      "title": "Tecnologías y Stack | Victor Rodrigues",
+      "description": "Stack de Victor Rodrigues: HTML, CSS, JavaScript, React, Java, C#, PostgreSQL, Next.js y WordPress, además de seguridad, cloud y herramientas de desarrollo."
     },
     "certifications": {
-      "title": "Certificaciones | Victor Rodrigues",
+      "title": "Certificaciones y Formación | Victor Rodrigues",
       "description": "Formación técnica y certificaciones de Victor Rodrigues en desarrollo Full-Stack, Java e ingeniería informática."
     },
     "projects": {
-      "title": "Proyectos | Victor Rodrigues",
-      "description": "Proyectos de Victor Rodrigues — D.Services Limpezas, Desbravadores na Estrada, FlowJersey SaaS, proyectos Java y desarrollo de software moderno."
-    },
-    "flowjersey": {
-      "title": "FlowJersey | Victor Rodrigues",
-      "description": "FlowJersey — plataforma SaaS multi-tenant para e-commerce deportivo. Arquitectura, tecnologías y galería."
+      "title": "Proyectos Web | Victor Rodrigues",
+      "description": "Proyectos de Victor Rodrigues: D.Services Limpezas (Next.js), Desbravadores na Estrada (WordPress) y proyectos Java. Sitios rápidos, responsivos y optimizados para SEO."
     },
     "desbravadores": {
       "title": "Desbravadores na Estrada | Victor Rodrigues",
@@ -42,16 +38,16 @@
       "description": "D.Services Limpezas — sitio web institucional en Next.js para una empresa de limpieza en Figueira da Foz. Diseño, SEO y galería."
     },
     "journey": {
-      "title": "Trayectoria | Victor Rodrigues",
-      "description": "Trayectoria profesional y académica de Victor Rodrigues — formación, proyectos y objetivos futuros."
+      "title": "Trayectoria Profesional y Académica | Victor Rodrigues",
+      "description": "Trayectoria de Victor Rodrigues: formación Full-Stack, prácticas curriculares en PAOS y objetivos futuros en Ingeniería Informática."
     },
     "contact": {
       "title": "Contacto | Victor Rodrigues",
-      "description": "Contacta con Victor Rodrigues para colaboraciones, proyectos web y plataformas SaaS."
+      "description": "Contacta con Victor Rodrigues, Desarrollador Full-Stack en Portugal, para sitios web, aplicaciones web y colaboraciones en proyectos de software."
     },
     "cv": {
-      "title": "Victor Rodrigues | Currículum",
-      "description": "Currículum de Victor Rodrigues — Desarrollador Full-Stack. Competencias, proyectos, formación y certificaciones."
+      "title": "Currículum | Victor Rodrigues, Desarrollador Full-Stack",
+      "description": "Currículum de Victor Rodrigues, Desarrollador Full-Stack: competencias en HTML, CSS, JavaScript, React, Java, C# y PostgreSQL, proyectos, formación y certificaciones."
     }
   },
   "nav": {
@@ -91,11 +87,11 @@
     },
     "studies": {
       "title": "Qué estudio",
-      "description": "Actualmente me dedico a profundizar mis conocimientos en desarrollo Full-Stack, arquitectura de software, seguridad de aplicaciones y plataformas SaaS. Combino formación técnica, estudio continuo y desarrollo de proyectos prácticos para evolucionar constantemente como profesional."
+      "description": "Actualmente me dedico a profundizar mis conocimientos en desarrollo Full-Stack, arquitectura de software, seguridad de aplicaciones y bases de datos. Combino formación técnica, estudio continuo y desarrollo de proyectos prácticos para evolucionar constantemente como profesional."
     },
     "mainTech": {
       "title": "Tecnologías principales",
-      "description": "Trabajo principalmente con Next.js, React, TypeScript, PostgreSQL y Supabase, desarrollando aplicaciones modernas enfocadas en rendimiento, seguridad y escalabilidad. Complemento estas competencias con conocimientos de APIs, autenticación, bases de datos e infraestructuras cloud."
+      "description": "Trabajo principalmente con HTML, CSS, JavaScript, C#, Java, React y PostgreSQL, desarrollando aplicaciones modernas enfocadas en rendimiento, seguridad y escalabilidad. Complemento estas competencias con conocimientos de APIs, autenticación, bases de datos e infraestructuras cloud."
     },
     "goals": {
       "title": "Objetivos profesionales",
@@ -107,70 +103,13 @@
     "title": "Destacados Técnicos",
     "subtitle": "Competencias demostradas en proyectos reales y en producción.",
     "items": {
-      "saas": { "title": "Desarrollo SaaS", "description": "Plataformas multi-tenant con suscripciones, planes y gestión de usuarios." },
-      "multiTenant": { "title": "Arquitectura Multi-Tenant", "description": "Aislamiento de datos y lógica segregada por tenant con escalabilidad horizontal." },
       "postgresql": { "title": "PostgreSQL", "description": "Modelado relacional, consultas optimizadas y migraciones en producción." },
       "supabase": { "title": "Supabase", "description": "Autenticación, APIs en tiempo real y gestión de datos con PostgreSQL gestionado." },
-      "rls": { "title": "Seguridad RLS", "description": "Row Level Security para aislamiento riguroso de datos entre tenants." },
-      "stripe": { "title": "Stripe Connect", "description": "Pagos, suscripciones y reparto de ingresos entre plataforma y comerciantes." },
       "rateLimiting": { "title": "Rate Limiting", "description": "Protección de APIs contra abuso con control de tasa de solicitudes." },
       "cloudflare": { "title": "Cloudflare", "description": "CDN, protección DDoS y optimización de entrega de contenido global." },
       "cicd": { "title": "CI/CD", "description": "Pipelines automatizados para despliegue continuo y calidad de código." },
       "i18n": { "title": "Internacionalización", "description": "Websites multi-idioma con SEO internacional y hreflang." }
     }
-  },
-  "featuredProject": {
-    "title": "Proyecto Principal",
-    "name": "FlowJersey",
-    "subtitle": "Plataforma SaaS Multi-Tenant",
-    "problem": "Los comerciantes de camisetas deportivas necesitan una forma simple y segura de crear tiendas online sin invertir en infraestructura técnica compleja.",
-    "solution": "FlowJersey es una plataforma SaaS multi-tenant que permite a cada comerciante crear su tienda online en una infraestructura compartida, con gestión de productos, pedidos, clientes y planes en un único dashboard.",
-    "audience": "Emprendedores y comerciantes del sector deportivo que quieren vender online de forma profesional y escalable.",
-    "why": "Desarrollado para aplicar en la práctica arquitectura SaaS, multi-tenancy, seguridad RLS e integraciones de pago reales.",
-    "problemLabel": "Problema",
-    "solutionLabel": "Solución",
-    "audienceLabel": "Público",
-    "whyLabel": "Por qué",
-    "technologiesTitle": "Tecnologías",
-    "featuresTitle": "Funcionalidades",
-    "challengesTitle": "Desafíos Técnicos",
-    "galleryTitle": "Galería",
-    "galleryPlaceholder": {
-      "badge": "En desarrollo",
-      "title": "Galería disponible próximamente",
-      "description": "FlowJersey se encuentra en desarrollo activo. La galería con capturas de la interfaz — dashboard, área de gestión y páginas públicas — se publicará cuando la plataforma alcance una etapa visual estable para demostración."
-    },
-    "features": [
-      "Multi-Tenant",
-      "Dashboard",
-      "Gestión de Productos",
-      "Gestión de Clientes",
-      "Gestión de Pedidos",
-      "Sistema de Planes",
-      "Stripe Connect",
-      "Seguridad RLS",
-      "Rate Limiting",
-      "Autenticación"
-    ],
-    "challenges": {
-      "multiTenancy": { "title": "Multi-Tenancy", "description": "Arquitectura aislada por tenant con datos segregados y escalabilidad horizontal." },
-      "security": { "title": "Seguridad", "description": "Autenticación, autorización y protección rigurosa de datos sensibles." },
-      "stripe": { "title": "Stripe", "description": "Integración de pagos, suscripciones y Stripe Connect para comerciantes." },
-      "rateLimiting": { "title": "Rate Limiting", "description": "Protección contra abuso con control de tasa de solicitudes vía Redis." },
-      "performance": { "title": "Rendimiento", "description": "Optimización de consultas, caching y renderizado para respuestas rápidas." },
-      "scalability": { "title": "Escalabilidad", "description": "Infraestructura preparada para crecimiento con Vercel y Cloudflare." }
-    },
-    "gallery": {
-      "dashboard": "Dashboard",
-      "products": "Gestión de Productos",
-      "orders": "Gestión de Pedidos",
-      "customers": "Gestión de Clientes",
-      "store": "Página de la Tienda",
-      "checkout": "Checkout",
-      "plans": "Planes",
-      "admin": "Administración"
-    },
-    "galleryPlaceholderItem": "Captura disponible próximamente"
   },
   "desbravadoresProject": {
     "title": "Proyecto Principal",
@@ -409,9 +348,8 @@
   },
   "projects": {
     "title": "Proyectos",
-    "subtitle": "Proyectos reales para clientes y productos en desarrollo.",
+    "subtitle": "Proyectos reales desarrollados para clientes.",
     "featured": "Proyecto Principal",
-    "saasBadge": "SaaS",
     "wordpressBadge": "WordPress",
     "nextjsBadge": "Next.js",
     "inDevelopment": "En Desarrollo",
@@ -423,15 +361,8 @@
     "githubLabel": "GitHub",
     "demoLabel": "Demo",
     "websiteLabel": "Visitar Sitio Web",
-    "previewAriaLabel": "Ver galería FlowJersey — ampliar capturas de pantalla",
     "desbravadoresPreviewAriaLabel": "Ver galería Desbravadores na Estrada — ampliar capturas de pantalla",
     "dservicesPreviewAriaLabel": "Ver galería D.Services Limpezas — ampliar capturas de pantalla",
-    "flowjersey": {
-      "name": "FlowJersey",
-      "tagline": "Plataforma SaaS Multi-Tenant",
-      "description": "Plataforma SaaS multi-tenant para creación y gestión de tiendas online de camisetas deportivas, con suscripciones, pagos y aislamiento de datos por comerciante.",
-      "highlights": ["Arquitectura Multi-Tenant", "Stripe Connect", "Seguridad RLS", "Rate Limiting", "Dashboard Admin"]
-    },
     "desbravadores": {
       "name": "Desbravadores na Estrada",
       "tagline": "Blog de Viajes · Proyecto para Cliente",
@@ -461,22 +392,14 @@
         "title": "Inicio de la formación Full-Stack",
         "description": "Inicio de la formación técnica en desarrollo web moderno, con foco en JavaScript, React y buenas prácticas de ingeniería de software."
       },
-      "jweb-internship": {
-        "title": "Prácticas en jweb",
-        "period": "Septiembre - Octubre/2026",
-        "description": "Prácticas profesionales en Jweb, realizadas entre el 7 de septiembre y el 29 de octubre de 2026, con una carga horaria total de 300 horas. Experiencia práctica en un entorno profesional, acompañada por el responsable de prácticas, José Oliveira."
+      "paos-internship": {
+        "title": "Prácticas curriculares en PAOS",
+        "period": "Octubre/2026 - Febrero/2027",
+        "description": "Prácticas curriculares en PAOS, con inicio el 12 de octubre de 2026 y finalización prevista el 2 de febrero de 2027. Experiencia práctica en un entorno profesional, integrada en la formación."
       },
       "degree": {
         "title": "Licenciatura en Ingeniería Informática",
         "description": "Ingreso planificado en la Licenciatura en Ingeniería Informática en ISEC Coimbra, profundizando fundamentos de ingeniería de software y sistemas."
-      },
-      "cybersecurity": {
-        "title": "Especialización en Ciberseguridad",
-        "description": "Formación avanzada planificada en seguridad de aplicaciones, protección de datos y prácticas de defensa en sistemas web."
-      },
-      "ai": {
-        "title": "Especialización en Inteligencia Artificial",
-        "description": "Profundización planificada en IA aplicada al desarrollo de software y sistemas inteligentes."
       }
     }
   },
@@ -486,13 +409,12 @@
     "items": {
       "technologies": { "label": "Tecnologías" },
       "languages": { "label": "Idiomas" },
-      "saas": { "label": "SaaS en desarrollo" },
       "studyHours": { "label": "Horas de estudio" }
     }
   },
   "cta": {
     "title": "¿Construimos algo juntos?",
-    "description": "Estoy disponible para colaborar en proyectos web, plataformas SaaS y soluciones modernas para empresas y emprendedores.",
+    "description": "Estoy disponible para colaborar en proyectos web, aplicaciones web y soluciones modernas para empresas y emprendedores.",
     "button": "Contactar"
   },
   "contact": {
@@ -532,15 +454,14 @@
     "title": "Currículum",
     "download": "Descargar CV",
     "jobTitle": "Desarrollador Full-Stack",
-    "heroTagline": "Especializado en aplicaciones web modernas, plataformas SaaS y arquitectura escalable.",
+    "heroTagline": "Especializado en sitios y aplicaciones web modernas, con enfoque en rendimiento y seguridad.",
     "summary": [
-      "Desarrollador Full-Stack enfocado en el desarrollo de aplicaciones web modernas, sitios para clientes y plataformas SaaS.",
-      "Desarrollé Desbravadores na Estrada, un sitio WordPress entregado a un cliente real, con Elementor Pro, diseño mobile-first y optimización de rendimiento.",
-      "En paralelo construyo FlowJersey, una plataforma SaaS multi-tenant con Next.js, TypeScript y PostgreSQL."
+      "Desarrollador Full-Stack enfocado en el desarrollo de aplicaciones web modernas y sitios para clientes.",
+      "Desarrollé Desbravadores na Estrada, un sitio WordPress entregado a un cliente real, con Elementor Pro, diseño mobile-first y optimización de rendimiento."
     ],
     "objectiveHighlight": "Seguir evolucionando como Desarrollador Full-Stack mediante la creación de productos reales y la profundización en Arquitectura de Software, Ciberseguridad e Inteligencia Artificial.",
     "keySkillCards": [
-      { "title": "Arquitectura SaaS", "description": "Desarrollo de plataformas multi-tenant escalables." },
+      { "title": "Java & C#", "description": "Programación orientada a objetos y estructuras de datos." },
       { "title": "Seguridad Aplicacional", "description": "Autenticación, RLS, rate limiting y protección de APIs." },
       { "title": "PostgreSQL", "description": "Modelado relacional y optimización de consultas." },
       { "title": "Cloud Infrastructure", "description": "Deploy, CDN, DNS y protección vía Cloudflare." },
@@ -552,12 +473,10 @@
       { "id": "frontend", "label": "Frontend Moderno" },
       { "id": "backend", "label": "Backend" },
       { "id": "database", "label": "Bases de Datos" },
-      { "id": "saas", "label": "Arquitectura SaaS" },
       { "id": "security", "label": "Seguridad" },
       { "id": "cloud", "label": "Cloud Infrastructure" }
     ],
     "interestTags": [
-      "SaaS",
       "Arquitectura",
       "Seguridad",
       "Cloud",
@@ -572,40 +491,6 @@
       "linkedin": "LinkedIn",
       "email": "Email",
       "location": "Ubicación"
-    },
-    "mainProject": {
-      "name": "Desbravadores na Estrada",
-      "badges": ["Proyecto Principal", "WordPress", "Cliente Real", "Completado"],
-      "description": [
-        "Sitio web desarrollado para un cliente real — un blog de viajes con navegación intuitiva y contenidos organizados por destinos.",
-        "Construido con WordPress y Elementor Pro, con enfoque mobile-first, plantillas personalizadas y gestión simplificada de contenidos.",
-        "Foco en rendimiento, experiencia de usuario y una identidad visual limpia y consistente en todos los dispositivos."
-      ],
-      "statsTitle": "Desbravadores en Destacado",
-      "stats": [
-        { "label": "Proyecto para Cliente", "highlight": true },
-        { "label": "Mobile First", "highlight": true },
-        { "label": "Elementor Theme Builder", "highlight": true },
-        { "label": "Diseño Responsivo", "highlight": true },
-        { "label": "Plantillas Personalizadas", "highlight": true },
-        { "label": "SEO Básico", "highlight": true },
-        { "label": "Optimización de Rendimiento", "highlight": true },
-        { "label": "Gestión WordPress", "highlight": true }
-      ],
-      "highlightsLabel": "Destacados Técnicos",
-      "highlightGroups": [
-        { "label": "Experiencia", "items": ["Mobile First", "UI/UX", "Diseño Responsivo"] },
-        { "label": "WordPress", "items": ["Elementor Pro", "Theme Builder", "Plantillas personalizadas"] },
-        { "label": "Contenido", "items": ["Categorías de viajes", "Artículos", "Traducción automática"] },
-        { "label": "Calidad", "items": ["Rendimiento", "SEO básico", "Gestión simplificada"] }
-      ],
-      "metricsTitle": "Stack Técnica",
-      "technologyGroups": [
-        { "label": "CMS", "items": ["WordPress", "Elementor Pro"] },
-        { "label": "Frontend", "items": ["HTML5", "CSS3", "JavaScript"] },
-        { "label": "Backend", "items": ["PHP"] },
-        { "label": "Diseño", "items": ["Responsive Design", "UI/UX Design", "Design System"] }
-      ]
     },
     "academicProjects": {
       "java": {
@@ -634,7 +519,6 @@
       "summary": "Resumen Profesional",
       "objectives": "Objetivo Profesional",
       "keySkills": "Competencias Principales",
-      "mainProject": "Proyecto Destacado",
       "academicProjects": "Proyectos Académicos",
       "technicalProfile": "Perfil Técnico",
       "skills": "Competencias Técnicas",
@@ -670,7 +554,6 @@
       "es": "Español"
     },
     "interests": {
-      "saas": "SaaS",
       "security": "Seguridad",
       "architecture": "Arquitectura",
       "ai": "Inteligencia Artificial",
@@ -693,9 +576,9 @@
       "ai-specialization": { "title": "Inteligencia Artificial" }
     },
     "experienceItems": {
-      "jweb-internship": {
-        "title": "Prácticas — jweb",
-        "description": "Prácticas profesionales en Jweb, realizadas entre el 7 de septiembre y el 29 de octubre de 2026, con una carga horaria total de 300 horas. Experiencia práctica en un entorno profesional, acompañada por el responsable de prácticas, José Oliveira."
+      "paos-internship": {
+        "title": "Prácticas curriculares — PAOS",
+        "description": "Prácticas curriculares en PAOS, con inicio el 12 de octubre de 2026 y finalización prevista el 2 de febrero de 2027. Experiencia práctica en un entorno profesional, integrada en la formación."
       }
     }
   },

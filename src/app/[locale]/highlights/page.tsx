@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { TechnicalHighlights } from "@/components/highlights/technical-highlights";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default async function HighlightsPage({ params }: PageProps) {
 
   return (
     <div className="page-main">
+      <PageJsonLd page="highlights" locale={locale} dict={dict} />
       <TechnicalHighlights dict={dict} locale={locale} />
     </div>
   );

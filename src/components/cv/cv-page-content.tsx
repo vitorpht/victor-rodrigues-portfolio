@@ -6,9 +6,7 @@ import type {
   CvCertificationGroup,
   CvData,
   CvEducationItem,
-  CvMainProject,
   CvSkillCard,
-  CvStatItem,
 } from "@/lib/cv/build-cv-data";
 import { cn } from "@/lib/utils";
 
@@ -82,10 +80,6 @@ export function CvPageContent({ data, downloadLabel }: CvPageContentProps) {
 
       <CvSection title={data.sections.objectives}>
         <p className="text-sm leading-relaxed text-foreground sm:text-[15px]">{data.objectiveHighlight}</p>
-      </CvSection>
-
-      <CvSection title={data.sections.mainProject}>
-        <FlowJerseyBlock project={data.mainProject} />
       </CvSection>
 
       <CvSection title={data.sections.keySkills}>
@@ -205,75 +199,6 @@ export function CvPageContent({ data, downloadLabel }: CvPageContentProps) {
         </Link>
       </div>
     </article>
-  );
-}
-
-function FlowJerseyBlock({ project }: { project: CvMainProject }) {
-  const statRows = [];
-  for (let i = 0; i < project.stats.length; i += 4) {
-    statRows.push(project.stats.slice(i, i + 4));
-  }
-
-  return (
-    <div>
-      <h3 className="text-lg font-bold text-primary">{project.name}</h3>
-      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
-        {project.badges.map((badge) => (
-          <span key={badge} className="text-xs font-semibold text-primary">
-            {badge}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-4 space-y-3">
-        {project.description.map((paragraph) => (
-          <p key={paragraph.slice(0, 40)} className="text-sm leading-relaxed text-foreground-secondary">
-            {paragraph}
-          </p>
-        ))}
-      </div>
-
-      <p className="mb-3 mt-6 text-xs font-bold uppercase tracking-wider text-foreground">{project.statsTitle}</p>
-      <div className="space-y-2">
-        {statRows.map((row) => (
-          <div key={row.map((s) => s.label).join("-")} className="grid grid-cols-4 gap-2">
-            {Array.from({ length: 4 }).map((_, i) => {
-              const stat = row[i];
-              if (!stat) return <div key={`empty-${i}`} />;
-              return <StatCell key={stat.label} stat={stat} />;
-            })}
-          </div>
-        ))}
-      </div>
-
-      <p className="mb-3 mt-6 text-xs font-bold uppercase tracking-wider text-foreground">{project.metricsTitle}</p>
-      <dl className="space-y-3">
-        {project.technologyGroups.map((group) => (
-          <div key={group.label}>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-primary">{group.label}</dt>
-            <dd className="mt-1 text-sm text-foreground-secondary">{group.items.join(" · ")}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  );
-}
-
-function StatCell({ stat }: { stat: CvStatItem }) {
-  return (
-    <div
-      className={cn(
-        "flex h-20 flex-col items-center justify-center rounded border px-1 text-center",
-        stat.highlight ? "border-primary/30 bg-primary/[0.04]" : "border-border bg-card",
-      )}
-    >
-      {stat.value ? (
-        <p className="text-lg font-bold leading-none text-primary">{stat.value}</p>
-      ) : (
-        <div className="h-[18px]" />
-      )}
-      <p className="mt-1 text-[11px] leading-tight text-foreground-secondary">{stat.label}</p>
-    </div>
   );
 }
 

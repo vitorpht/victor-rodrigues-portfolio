@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { Journey } from "@/components/journey/journey";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default async function JourneyPage({ params }: PageProps) {
 
   return (
     <div className="page-main">
+      <PageJsonLd page="journey" locale={locale} dict={dict} />
       <Journey dict={dict} locale={locale} />
     </div>
   );

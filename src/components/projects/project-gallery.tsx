@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Expand, X, ZoomOut } from "lucide-react";
-import { FlowJerseyScreenshot } from "@/components/flowjersey/flowjersey-screenshot";
+import { ProjectScreenshot } from "@/components/projects/project-screenshot";
 import { cn } from "@/lib/utils";
 
 type GalleryItem = {
@@ -11,7 +11,7 @@ type GalleryItem = {
   image: string;
 };
 
-type FlowJerseyGalleryProps = {
+type ProjectGalleryProps = {
   items: GalleryItem[];
   labels: Record<string, string>;
   placeholderText: string;
@@ -66,7 +66,7 @@ function GallerySlide({
 }) {
   return (
     <div className={cn("relative aspect-video w-full overflow-hidden rounded-xl bg-background-secondary", className)}>
-      <FlowJerseyScreenshot
+      <ProjectScreenshot
         item={item}
         title={title}
         available={screenshotsAvailable}
@@ -81,12 +81,12 @@ function GallerySlide({
   );
 }
 
-export function FlowJerseyGallery({
+export function ProjectGallery({
   items,
   labels,
   placeholderText,
   screenshotsAvailable,
-}: FlowJerseyGalleryProps) {
+}: ProjectGalleryProps) {
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [view, setView] = useState<ViewState>(INITIAL_VIEW);

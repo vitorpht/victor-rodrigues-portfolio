@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageJsonLd } from "@/components/seo/page-json-ld";
 import { About } from "@/components/about/about";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import { createPageMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default async function AboutPage({ params }: PageProps) {
 
   return (
     <div className="page-main">
+      <PageJsonLd page="about" locale={locale} dict={dict} />
       <About dict={dict} locale={locale} />
     </div>
   );
